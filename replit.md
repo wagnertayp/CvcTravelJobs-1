@@ -461,13 +461,13 @@ Changelog:
   * Created professional layout with chevron icon glow effect and drop shadows
   * Enhanced typography with refined spacing and "CVC Agentes" branding
   * Balanced clean aesthetics with sophisticated design elements for premium feel
-- June 19, 2025. Implemented single-step loader matching configuration system style:
-  * Redesigned to show only one option at a time, exactly like sistema-de-vendas configuration
-  * Each step appears individually for 6 seconds with spinner animation and bouncing dots
-  * Completed steps remain visible with green CheckCircle2 icons and green backgrounds
-  * Only current loading step and completed steps are displayed (pending steps hidden)
-  * Applied configuration-style design: clean borders, proper spacing, and CVC yellow spinners
-  * Maintained 6-second timing per step for optimal user experience (30 seconds total)
+- June 19, 2025. Restored sequential enumerated loader with progressive reading experience:
+  * All options visible with numbered badges (1, 2, 3, 4, 5) for clear progression tracking
+  * Each step loads sequentially for 6 seconds with comprehensive visual feedback
+  * Active step shows: spinning ring, pulsing text, progress dots, and "Carregando..." status
+  * Completed steps display: green background, check mark, scale animation, and "Concluído" status
+  * Pending steps show: muted colors, numbered badges, and "Aguardando" status
+  * Creates reading-like experience where user follows numbered progression through phases
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

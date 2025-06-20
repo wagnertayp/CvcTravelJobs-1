@@ -49,47 +49,89 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
           <div className="w-16 h-0.5 bg-cvc-yellow/70 mx-auto rounded-full"></div>
         </div>
 
-        {/* Single Step Loading - Configuration Style */}
-        <div className="max-w-md mx-auto space-y-3">
+        {/* Sequential Loading with All Options Visible */}
+        <div className="space-y-3">
           {steps.map((step, index) => {
             const isCompleted = completedSteps.includes(index);
             const isActive = currentStep === index;
-            
-            // Only show completed steps and current active step
-            if (!isCompleted && !isActive) {
-              return null;
-            }
+            const isPending = index > currentStep;
 
             return (
               <div 
                 key={index} 
                 className={`
-                  flex items-center gap-3 p-3 rounded-lg transition-all duration-500
-                  ${isCompleted ? 'bg-green-50 border border-green-200' : 'bg-cvc-yellow/10 border border-cvc-yellow/30'}
+                  flex items-center gap-3 p-3 rounded-lg backdrop-blur-sm border transition-all duration-500
+                  ${isCompleted ? 'bg-green-500/20 border-green-400/40' :
+                    isActive ? 'bg-cvc-yellow/20 border-cvc-yellow/40' :
+                    'bg-white/10 border-white/20'}
                 `}
               >
-                {isCompleted ? (
-                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
-                ) : isActive ? (
-                  <div className="w-5 h-5 border-2 border-cvc-yellow border-t-transparent rounded-full animate-spin flex-shrink-0"></div>
-                ) : (
-                  <div className="w-5 h-5 border-2 border-gray-300 rounded-full flex-shrink-0"></div>
-                )}
+                <div className={`
+                  relative w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-500
+                  ${isCompleted ? 'bg-green-500 text-white transform scale-110' : 
+                    isActive ? 'bg-cvc-yellow text-cvc-blue' : 
+                    'bg-white/20 text-white/60'}
+                `}>
+                  {isCompleted ? (
+                    <Check className="h-4 w-4 animate-bounce" />
+                  ) : (
+                    index + 1
+                  )}
+                  
+                  {/* Loading ring animation for active step */}
+                  {isActive && (
+                    <div className="absolute inset-0 rounded-full border-2 border-cvc-yellow/30 border-t-cvc-yellow animate-spin"></div>
+                  )}
+                </div>
                 
-                <span className={`text-sm ${
-                  isCompleted ? 'text-gray-900 font-medium' : 
-                  isActive ? 'text-gray-900 font-medium' : 
-                  'text-gray-500'
-                }`}>
-                  {step}
-                </span>
-                
-                {/* Loading dots for active step */}
+                <div className="flex-1">
+                  <p className={`
+                    text-sm font-medium transition-all duration-300
+                    ${isCompleted ? 'text-green-200' : 
+                      isActive ? 'text-white animate-pulse' : 
+                      'text-white/60'}
+                  `}>
+                    {step}
+                  </p>
+                  
+                  {/* Status indicator */}
+                  <div className="mt-1">
+                    {isCompleted && (
+                      <span className="text-xs text-green-300 font-medium">✓ Concluído</span>
+                    )}
+                    {isActive && (
+                      <span className="text-xs text-cvc-yellow font-medium animate-pulse">⟳ Carregando...</span>
+                    )}
+                    {isPending && (
+                      <span className="text-xs text-white/50 font-medium">⋯ Aguardando</span>
+                    )}
+                  </div>
+                  
+                  {/* Progress dots under active step */}
+                  {isActive && (
+                    <div className="flex gap-1 mt-2">
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse"></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Enhanced loading animation */}
                 {isActive && (
-                  <div className="flex gap-1 ml-auto">
+                  <div className="flex gap-1">
                     <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce"></div>
                     <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.15s'}}></div>
                     <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
+                  </div>
+                )}
+                
+                {/* Completion indicator */}
+                {isCompleted && (
+                  <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                    <Check className="h-2.5 w-2.5 text-white" />
                   </div>
                 )}
               </div>
