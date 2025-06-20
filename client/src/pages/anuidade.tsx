@@ -16,7 +16,8 @@ import {
   AlertTriangle,
   ChevronDown,
   ChevronUp,
-  Package
+  Package,
+  MapPin
 } from "lucide-react";
 
 export default function Anuidade() {
@@ -387,40 +388,62 @@ export default function Anuidade() {
                 </div>
 
                 {/* Pending Payment Warning */}
-                <div className="p-4 bg-orange-50 border border-orange-200 rounded-lg mb-4">
-                  <h4 className="font-semibold text-orange-800 text-sm mb-2">Pendências para Finalização</h4>
-                  <div className="text-sm text-orange-700 mb-3">
-                    <span className="block">• Frete do kit profissional (SEDEX)</span>
-                    <span className="block">• Emissão cartões CVC + Amil</span>
-                  </div>
-                  <div className="bg-orange-100 p-2 rounded flex justify-between items-center">
-                    <span className="text-sm font-medium text-orange-700">Total:</span>
-                    <span className="text-lg font-bold text-orange-800">R$ 56,18</span>
+                <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-lg p-4 mb-4 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Package className="h-4 w-4 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-orange-800 text-sm mb-3">Pendências para Finalização</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                        <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
+                          <div className="text-xs font-medium text-orange-800 mb-1">Frete SEDEX</div>
+                          <div className="text-xs text-orange-600">Kit profissional completo</div>
+                        </div>
+                        <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
+                          <div className="text-xs font-medium text-orange-800 mb-1">Emissão de Cartões</div>
+                          <div className="text-xs text-orange-600">CVC personalizado + Amil</div>
+                        </div>
+                      </div>
+                      <div className="bg-orange-600 text-white p-3 rounded-md flex justify-between items-center">
+                        <span className="text-sm font-medium">Total a Pagar:</span>
+                        <span className="text-xl font-bold">R$ 56,18</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Shipping Address */}
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg mb-4">
-                  <h5 className="font-medium text-gray-800 text-sm mb-2">Endereço de Entrega</h5>
-                  <div className="text-sm text-gray-600">
-                    {(() => {
-                      const shippingData = localStorage.getItem('shippingAddress');
-                      if (shippingData) {
-                        try {
-                          const address = JSON.parse(shippingData);
-                          return (
-                            <div className="space-y-1">
-                              <div>{address.rua}, {address.numero}</div>
-                              <div>{address.bairro} - {address.cidade}/{address.estado}</div>
-                              <div>CEP: {address.cep}</div>
-                            </div>
-                          );
-                        } catch (e) {
-                          return <span className="text-gray-400">Endereço não informado</span>;
-                        }
-                      }
-                      return <span className="text-gray-400">Endereço não informado</span>;
-                    })()}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 mb-4 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-cvc-blue rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <MapPin className="h-4 w-4 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="font-medium text-cvc-blue text-sm mb-2">Endereço de Entrega</h5>
+                      <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-blue-200">
+                        <div className="text-sm text-gray-700">
+                          {(() => {
+                            const shippingData = localStorage.getItem('shippingAddress');
+                            if (shippingData) {
+                              try {
+                                const address = JSON.parse(shippingData);
+                                return (
+                                  <div className="space-y-1">
+                                    <div className="font-medium">{address.rua}, {address.numero}</div>
+                                    <div>{address.bairro} - {address.cidade}/{address.estado}</div>
+                                    <div className="text-xs text-gray-500">CEP: {address.cep}</div>
+                                  </div>
+                                );
+                              } catch (e) {
+                                return <span className="text-gray-400 italic">Endereço não informado</span>;
+                              }
+                            }
+                            return <span className="text-gray-400 italic">Endereço não informado</span>;
+                          })()}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
