@@ -25,7 +25,7 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
         setTimeout(() => {
           setCurrentStep(prev => prev + 1);
         }, 300);
-      }, 6000); // 6 seconds per step
+      }, 8000); // 8 seconds per step
 
       return () => clearTimeout(timer);
     } else if (currentStep === steps.length) {
@@ -82,6 +82,13 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                   {isActive && (
                     <div className="absolute inset-0 rounded-full">
                       <div className="w-full h-full rounded-full border-2 border-transparent border-t-white animate-spin"></div>
+                    </div>
+                  )}
+                  
+                  {/* Slower spinning ring animation for pending steps */}
+                  {isPending && (
+                    <div className="absolute inset-0 rounded-full">
+                      <div className="w-full h-full rounded-full border-2 border-transparent border-t-white/30 animate-spin" style={{animationDuration: '3s'}}></div>
                     </div>
                   )}
                 </div>

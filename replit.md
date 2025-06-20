@@ -498,7 +498,8 @@ Changelog:
   * Numbers remain static while white border spins for loading indication
   * Removed animate-pulse from text and status indicators for cleaner presentation
   * Removed "Carregando..." status text for cleaner interface
-  * Maintained 6-second sequential loading per step with visual feedback
+  * Increased loading time from 6 to 8 seconds per step for better user experience
+  * Added slower spinning animation to pending steps (3s duration) for complete progress visualization
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
