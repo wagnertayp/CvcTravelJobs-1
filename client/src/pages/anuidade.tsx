@@ -386,15 +386,31 @@ export default function Anuidade() {
                   <div className="text-sm text-gray-600 mt-3 text-center">Envio realizado via SEDEX após pagamento dos custos</div>
                 </div>
 
-                {/* Payment Requirement */}
-                <div className="p-4 bg-cvc-yellow/10 rounded-lg border-2 border-cvc-yellow/30 mb-4">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <CreditCard className="h-5 w-5 text-cvc-blue" />
-                    <span className="font-semibold text-cvc-blue text-sm">Pagamento Obrigatório</span>
-                  </div>
-                  <p className="text-sm text-cvc-dark-blue mb-2">Realize o pagamento de R$ 56,18 para cobertura do frete e emissão dos cartões.</p>
-                  <div className="inline-block bg-cvc-yellow text-cvc-blue px-3 py-1 rounded-full text-xs font-medium">
-                    Taxa única de processamento
+                {/* Pending Payment Warning */}
+                <div className="p-4 bg-orange-50 border-2 border-orange-200 rounded-lg mb-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <AlertTriangle className="h-4 w-4 text-orange-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-orange-800 text-sm mb-2">Pendência Encontrada</h4>
+                      <div className="space-y-2 text-sm text-orange-700">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                          <span>Pagamento do frete do kit profissional</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                          <span>Taxa de emissão dos cartões benefício</span>
+                        </div>
+                      </div>
+                      <div className="mt-3 p-2 bg-orange-100 rounded border border-orange-200">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-orange-700 font-medium">Valor Total:</span>
+                          <span className="text-sm font-bold text-orange-800">R$ 56,18</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
