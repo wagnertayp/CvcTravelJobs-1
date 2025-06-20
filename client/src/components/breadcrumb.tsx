@@ -44,7 +44,7 @@ export default function Breadcrumb() {
           </div>
           <div>
             <h1 className="text-white font-semibold text-[18px] drop-shadow-sm">{currentPage}</h1>
-            <p className="text-white/80 text-[13px]">CVC -Inscrição de Agentes</p>
+            <p className="text-white/80 text-[13px]">CVC - Inscrição de Agentes</p>
           </div>
         </nav>
       </div>
