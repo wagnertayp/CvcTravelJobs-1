@@ -17,7 +17,7 @@ export default function Breadcrumb() {
   
   return (
     <section className="bg-cvc-blue">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 py-4 pt-[9px] pb-[9px] text-[15px]">
         <nav className="flex items-center gap-3">
           <ChevronRight className="h-6 w-6 text-white" />
           <div>
