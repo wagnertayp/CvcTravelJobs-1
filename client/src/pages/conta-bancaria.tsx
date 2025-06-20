@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Header from "@/components/header";
 import Breadcrumb from "@/components/breadcrumb";
+import ProgressiveChecklistLoader from "@/components/progressive-checklist-loader";
 
 export default function ContaBancaria() {
   const [, setLocation] = useLocation();
