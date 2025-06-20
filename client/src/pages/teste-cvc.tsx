@@ -319,10 +319,10 @@ export default function TesteCVC() {
             <Button
               onClick={handleNextQuestion}
               disabled={selectedAnswer === null}
-              className="bg-cvc-blue text-white px-8 py-3 rounded-xl font-bold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-3 shadow-md transform hover:scale-105 transition-all duration-200 mx-auto"
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-2 mx-auto"
             >
               {currentQuestion < questions.length - 1 ? 'Próxima Questão' : 'Finalizar Teste'}
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>

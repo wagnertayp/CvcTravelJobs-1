@@ -549,6 +549,11 @@ Changelog:
   * Added BookOpen icon in circular container above title matching second phase design
   * Applied CVC blue/10 background with CVC blue icon for brand consistency
   * Maintained visual hierarchy and professional appearance throughout quiz interface
+- June 20, 2025. Standardized quiz button styling with project patterns:
+  * Removed hover scale effects and transform animations from quiz navigation button
+  * Updated to use standard rounded-lg corners instead of rounded-xl
+  * Applied consistent font-semibold weight and reduced icon size to h-4 w-4
+  * Maintained CVC brand colors while following established button design patterns
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
