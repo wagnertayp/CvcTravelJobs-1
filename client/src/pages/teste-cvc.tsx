@@ -251,7 +251,7 @@ export default function TesteCVC() {
                 </p>
               </div>
               
-              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4 ml-[-35px] mr-[-35px]">
                 <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Seleção de Agência</h4>
                 <ul className="text-sm text-cvc-dark-blue space-y-1">
                   <li>• Visualizar agências CVC próximas à sua região</li>
