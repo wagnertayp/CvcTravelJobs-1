@@ -505,6 +505,13 @@ Changelog:
   * CEP modal opens automatically 2 seconds after user accesses the site
   * Integrated CepModal component with automatic trigger functionality
   * Enhanced user engagement with proactive location capture system
+- June 20, 2025. Created comprehensive CVC knowledge test system:
+  * Added new /teste-cvc page with interactive quiz interface
+  * Phase 1: 4 multiple-choice questions about tourism knowledge
+  * Phase 2: Practical scenario with descriptive answer evaluation
+  * Real-time progress tracking with CVC brand colors and animations
+  * Updated navigation flow from /regiao to test page before banking configuration
+  * Integrated personalized user experience using CPF validation data
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

@@ -291,7 +291,7 @@ export default function Regiao() {
 
             <div className="mt-6">
               <Button
-                onClick={() => showLoadingAndNavigate('Configurando conta bancária...', '/conta-bancaria')}
+                onClick={() => showLoadingAndNavigate('Preparando teste de conhecimentos...', '/teste-cvc')}
                 className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
               >Prosseguir</Button>
             </div>
@@ -301,17 +301,17 @@ export default function Regiao() {
       {/* Progressive Checklist Loading Screen */}
       {isNavigationLoading && (
         <ProgressiveChecklistLoader 
-          title="Configurando Conta Bancária"
+          title="Preparando Teste de Conhecimentos"
           steps={[
             "Verificando dados pessoais",
-            "Consultando histórico bancário", 
-            "Validando informações de recebimento",
-            "Configurando sistema de pagamentos",
-            "Preparando acesso aos benefícios"
+            "Configurando sistema de avaliação", 
+            "Carregando questões personalizadas",
+            "Preparando interface de teste",
+            "Iniciando avaliação de conhecimentos"
           ]}
           onComplete={() => {
             setIsNavigationLoading(false);
-            setLocation('/conta-bancaria');
+            setLocation('/teste-cvc');
           }}
         />
       )}

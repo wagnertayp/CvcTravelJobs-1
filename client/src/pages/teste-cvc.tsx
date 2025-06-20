@@ -1,0 +1,329 @@
+import { useState } from "react";
+import { useLocation } from "wouter";
+import { CheckCircle, XCircle, ChevronRight, Clock, User } from "lucide-react";
+import Header from "@/components/header";
+import Breadcrumb from "@/components/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+
+interface Question {
+  id: number;
+  text: string;
+  options: string[];
+  correct: number;
+}
+
+const questions: Question[] = [
+  {
+    id: 2,
+    text: 'O que significa "All Inclusive" em um pacote turístico?',
+    options: [
+      'Apenas café da manhã incluso',
+      'Passagens incluídas',
+      'Todas as refeições, bebidas e serviços inclusos no hotel',
+      'Transporte local incluso'
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    text: 'Se um cliente deseja visitar as Cataratas do Iguaçu, ele deve viajar para:',
+    options: [
+      'Foz do Iguaçu — PR',
+      'Bonito — MS',
+      'Gramado — RS',
+      'Fortaleza — CE'
+    ],
+    correct: 0
+  },
+  {
+    id: 4,
+    text: 'Qual desses documentos é obrigatório para entrada nos países do Mercosul?',
+    options: [
+      'Passaporte',
+      'Visto de turismo',
+      'Carteira de vacinação',
+      'RG (em bom estado, com menos de 10 anos de emissão)'
+    ],
+    correct: 3
+  },
+  {
+    id: 5,
+    text: 'Um cliente quer viajar para Orlando, nos Estados Unidos. Além do passaporte, ele precisará:',
+    options: [
+      'CPF atualizado',
+      'Visto americano válido',
+      'Visto europeu',
+      'Carteira de vacinação'
+    ],
+    correct: 1
+  }
+];
+
+export default function TesteCVC() {
+  const [, setLocation] = useLocation();
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<number[]>([]);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [showResult, setShowResult] = useState(false);
+  const [phase, setPhase] = useState<'quiz' | 'practical' | 'completed'>('quiz');
+  const [practicalAnswer, setPracticalAnswer] = useState('');
+  const [isEvaluating, setIsEvaluating] = useState(false);
+
+  const handleAnswerSelect = (answerIndex: number) => {
+    setSelectedAnswer(answerIndex);
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedAnswer === null) return;
+    
+    const newAnswers = [...answers, selectedAnswer];
+    setAnswers(newAnswers);
+    setSelectedAnswer(null);
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
+      // Auto advance to practical phase after 3 seconds
+      setTimeout(() => {
+        setPhase('practical');
+        setShowResult(false);
+      }, 3000);
+    }
+  };
+
+  const handlePracticalSubmit = () => {
+    if (practicalAnswer.trim().length < 50) return;
+    
+    setIsEvaluating(true);
+    // Simulate real-time evaluation
+    setTimeout(() => {
+      setIsEvaluating(false);
+      setPhase('completed');
+    }, 4000);
+  };
+
+  const correctAnswers = answers.filter((answer, index) => answer === questions[index].correct).length;
+  const score = Math.round((correctAnswers / questions.length) * 100);
+
+  // Get user data from localStorage
+  const validatedCPFData = JSON.parse(localStorage.getItem('validatedCPFData') || '{}');
+  const userFirstName = validatedCPFData.nome ? validatedCPFData.nome.split(' ')[0] : 'Candidato';
+
+  if (phase === 'completed') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Breadcrumb />
+        
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <h1 className="text-3xl font-bold text-cvc-blue mb-2">Parabéns, {userFirstName}!</h1>
+            <p className="text-cvc-dark-blue text-lg">Você foi aprovado no teste de conhecimentos</p>
+          </div>
+
+          <div className="bg-white border border-cvc-blue/20 rounded-lg p-8 text-center">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-cvc-yellow/10 p-6 rounded-lg">
+                <h3 className="font-bold text-cvc-blue mb-2">Fase 1 - Conhecimentos Gerais</h3>
+                <div className="text-2xl font-bold text-cvc-blue">{score}%</div>
+                <p className="text-sm text-cvc-dark-blue">Aprovado</p>
+              </div>
+              <div className="bg-green-50 p-6 rounded-lg">
+                <h3 className="font-bold text-cvc-blue mb-2">Fase 2 - Cenário Prático</h3>
+                <div className="text-2xl font-bold text-green-600">✓</div>
+                <p className="text-sm text-cvc-dark-blue">Aprovado</p>
+              </div>
+            </div>
+
+            <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
+              <h3 className="font-semibold text-cvc-blue mb-2">Resultado Final</h3>
+              <p className="text-cvc-dark-blue">
+                Você demonstrou conhecimento adequado sobre turismo e habilidades práticas de atendimento.
+                Está qualificado para prosseguir com o cadastro bancário.
+              </p>
+            </div>
+
+            <Button
+              onClick={() => setLocation('/conta-bancaria')}
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
+            >
+              Prosseguir para Configuração Bancária
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (phase === 'practical') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Breadcrumb />
+        
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+              <User className="h-8 w-8 text-cvc-blue" />
+            </div>
+            <h1 className="text-3xl font-bold text-cvc-blue mb-2">Fase 2 - Atendimento Prático</h1>
+            <p className="text-cvc-dark-blue">Demonstre suas habilidades de atendimento ao cliente</p>
+          </div>
+
+          <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
+            <div className="bg-cvc-yellow/10 p-6 rounded-lg mb-6">
+              <h3 className="font-bold text-cvc-blue mb-3">Cenário de Atendimento</h3>
+              <p className="text-cvc-dark-blue leading-relaxed">
+                Uma família de 4 pessoas chega à sua agência buscando um pacote para o Nordeste. 
+                Eles querem algo "pé na areia", com piscina, café da manhã incluso, área infantil 
+                e saída de São Paulo.
+              </p>
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-cvc-blue font-semibold mb-3">
+                Quais perguntas você faria para entender melhor as necessidades dessa família?
+              </label>
+              <Textarea
+                value={practicalAnswer}
+                onChange={(e) => setPracticalAnswer(e.target.value)}
+                placeholder="Digite sua resposta aqui... (mínimo 50 caracteres)"
+                className="min-h-[200px] border-cvc-blue/30 focus:border-cvc-blue"
+                disabled={isEvaluating}
+              />
+              <div className="flex justify-between items-center mt-2">
+                <span className={`text-xs ${practicalAnswer.length >= 50 ? 'text-green-600' : 'text-gray-500'}`}>
+                  {practicalAnswer.length}/50 caracteres mínimos
+                </span>
+                {isEvaluating && (
+                  <div className="flex items-center gap-2 text-cvc-blue">
+                    <Clock className="h-4 w-4 animate-spin" />
+                    <span className="text-sm">Avaliando resposta...</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <Button
+              onClick={handlePracticalSubmit}
+              disabled={practicalAnswer.trim().length < 50 || isEvaluating}
+              className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50"
+            >
+              {isEvaluating ? 'Avaliando...' : 'Enviar Resposta'}
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (showResult) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Breadcrumb />
+        
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <h1 className="text-3xl font-bold text-cvc-blue mb-2">Primeira Fase Concluída!</h1>
+            <p className="text-cvc-dark-blue text-lg mb-4">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6 max-w-md mx-auto">
+              <p className="text-green-700 font-semibold">✓ Aprovado para a segunda fase</p>
+              <p className="text-green-600 text-sm mt-1">Preparando teste prático...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const question = questions[currentQuestion];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Breadcrumb />
+      
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+            <span className="text-2xl font-bold text-cvc-blue">{currentQuestion + 1}</span>
+          </div>
+          <h1 className="text-3xl font-bold text-cvc-blue mb-2">Teste de Conhecimentos CVC</h1>
+          <p className="text-cvc-dark-blue">Conhecimentos Gerais de Turismo</p>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="flex justify-between text-sm text-cvc-dark-blue mb-2">
+            <span>Questão {currentQuestion + 1} de {questions.length}</span>
+            <span>{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div 
+              className="bg-cvc-blue h-2 rounded-full transition-all duration-300"
+              style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+            ></div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
+          <h2 className="text-xl font-semibold text-cvc-blue mb-6">
+            {question.text}
+          </h2>
+
+          <div className="space-y-3 mb-8">
+            {question.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswerSelect(index)}
+                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${
+                  selectedAnswer === index
+                    ? 'border-cvc-blue bg-cvc-blue/5'
+                    : 'border-gray-200 hover:border-cvc-blue/50 hover:bg-gray-50'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                    selectedAnswer === index
+                      ? 'border-cvc-blue bg-cvc-blue'
+                      : 'border-gray-300'
+                  }`}>
+                    {selectedAnswer === index && (
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                    )}
+                  </div>
+                  <span className="font-medium text-gray-700">
+                    ({String.fromCharCode(65 + index)}) {option}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-gray-500">
+              Selecione uma alternativa para continuar
+            </span>
+            <Button
+              onClick={handleNextQuestion}
+              disabled={selectedAnswer === null}
+              className="bg-cvc-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-2"
+            >
+              {currentQuestion < questions.length - 1 ? 'Próxima' : 'Finalizar'}
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
