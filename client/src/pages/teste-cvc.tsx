@@ -171,7 +171,8 @@ export default function TesteCVC() {
               <User className="h-8 w-8 text-cvc-blue" />
             </div>
             <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Fase 2 - Atendimento Prático</h1>
-            <p className="text-cvc-dark-blue">Demonstre suas habilidades de atendimento ao cliente</p>
+            <p className="text-cvc-dark-blue text-[14px]">Demonstre suas habilidades de 
+            atendimento ao cliente</p>
           </div>
 
           <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
