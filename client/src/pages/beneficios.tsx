@@ -18,6 +18,7 @@ import {
   Heart,
   Shield,
   Clock,
+  ArrowDown,
   Award,
   Users,
 } from "lucide-react";
@@ -635,8 +636,9 @@ export default function Beneficios() {
                       <li>• Receber kit em até 3 dias úteis</li>
                     </ul>
                     <div className="mt-3 p-2 bg-cvc-blue/10 rounded-md">
-                      <p className="text-xs text-cvc-blue font-medium">
-                        ⚡ Continue abaixo para assinar o termo e finalizar
+                      <p className="text-xs text-cvc-blue font-medium flex items-center gap-1">
+                        <CheckCircle className="h-3 w-3" />
+                        Continue abaixo para assinar o termo e finalizar
                       </p>
                     </div>
                   </div>
