@@ -227,7 +227,7 @@ export default function Beneficios() {
               <div className="w-8 h-8 bg-cvc-yellow rounded-lg flex items-center justify-center">
                 <CreditCard className="h-5 w-5 text-cvc-blue" />
               </div>
-              <h2 className="font-semibold text-cvc-blue text-[18px]">Cartão de Uso Pessoal CVC</h2>
+              <h2 className="font-semibold text-cvc-blue text-[18px]">Cartão de Uso Pessoal </h2>
             </div>
             
             <div className="mb-4 bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-4">
