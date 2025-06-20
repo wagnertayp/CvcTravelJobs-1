@@ -400,9 +400,7 @@ export default function Anuidade() {
 
                 {/* Queue Warning Message */}
                 <div className="mb-3 p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
-                  <h3 className="text-sm font-semibold text-orange-800 mb-1">
-                    Agente na Fila de Espera
-                  </h3>
+                  <h3 className="text-sm font-semibold text-orange-800 mb-1">Agente na fila de espera</h3>
                   <p className="text-xs text-orange-700">
                     Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token. 
                     <strong> Caso não realize o pagamento em até 10 minutos, o token será automaticamente repassado</strong> para o próximo da fila.
