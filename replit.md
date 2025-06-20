@@ -493,6 +493,11 @@ Changelog:
   * Repositioned CheckCircle icon to front of "Cadastro realizado" title
   * Used CVC blue for titles and data values, CVC yellow background for confirmation section
   * Updated button hover state to use CVC dark blue for brand consistency
+- June 20, 2025. Enhanced progressive loader with spinning contour animation:
+  * Replaced blinking effect with spinning ring contour around numbers
+  * Numbers remain static while white border spins for loading indication
+  * Removed animate-pulse from text and status indicators for cleaner presentation
+  * Maintained 6-second sequential loading per step with visual feedback
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

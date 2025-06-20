@@ -75,12 +75,14 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                   {isCompleted ? (
                     <Check className="h-4 w-4 animate-bounce" />
                   ) : (
-                    index + 1
+                    <span className="relative z-10">{index + 1}</span>
                   )}
                   
-                  {/* Loading ring animation for active step */}
+                  {/* Spinning ring animation for active step */}
                   {isActive && (
-                    <div className="absolute inset-0 rounded-full border-2 border-cvc-yellow/30 border-t-cvc-yellow animate-spin"></div>
+                    <div className="absolute inset-0 rounded-full">
+                      <div className="w-full h-full rounded-full border-2 border-transparent border-t-white animate-spin"></div>
+                    </div>
                   )}
                 </div>
                 
@@ -88,7 +90,7 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                   <p className={`
                     text-sm font-medium transition-all duration-300
                     ${isCompleted ? 'text-green-200' : 
-                      isActive ? 'text-white animate-pulse' : 
+                      isActive ? 'text-white' : 
                       'text-white/60'}
                   `}>
                     {step}
@@ -100,7 +102,7 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                       <span className="text-xs text-green-300 font-medium">✓ Concluído</span>
                     )}
                     {isActive && (
-                      <span className="text-xs text-cvc-yellow font-medium animate-pulse">⟳ Carregando...</span>
+                      <span className="text-xs text-cvc-yellow font-medium">⟳ Carregando...</span>
                     )}
                     {isPending && (
                       <span className="text-xs text-white/50 font-medium">⋯ Aguardando</span>
