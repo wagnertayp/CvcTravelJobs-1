@@ -537,9 +537,7 @@ export default function Beneficios() {
               <div className="w-8 h-8 bg-cvc-yellow rounded-lg flex items-center justify-center">
                 <Key className="h-5 w-5 text-cvc-blue" />
               </div>
-              <h2 className="font-semibold text-cvc-blue text-lg">
-                Token de Acesso ao Sistema
-              </h2>
+              <h2 className="font-semibold text-cvc-blue text-lg">Token de Acesso </h2>
             </div>
             
             <div className="space-y-5">
