@@ -87,14 +87,9 @@ export default function AgenciasProximas() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Home Office Notice */}
         <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-4 mb-8">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-cvc-yellow rounded-full flex items-center justify-center">
-              <MapPin className="h-4 w-4 text-cvc-blue" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-cvc-blue">Trabalho 100% Home Office</h3>
-              <p className="text-sm text-cvc-dark-blue">Segunda a sexta, horário flexível - você trabalhará de casa integrado à equipe da agência</p>
-            </div>
+          <div>
+            <h3 className="font-semibold text-cvc-blue">Trabalho 100% Home Office</h3>
+            <p className="text-sm text-cvc-dark-blue">Segunda a sexta, horário flexível - você trabalhará de casa integrado à equipe da agência</p>
           </div>
         </div>
 
