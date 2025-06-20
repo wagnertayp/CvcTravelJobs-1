@@ -15,7 +15,8 @@ import {
   Link,
   AlertTriangle,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Package
 } from "lucide-react";
 
 export default function Anuidade() {
@@ -153,7 +154,7 @@ export default function Anuidade() {
       const requestData = {
         name: userDataParam.nome,
         cpf: userDataParam.cpf,
-        amount: '87.50',
+        amount: '56.18',
         phone: userDataParam.telefone || ''
       };
 
@@ -364,26 +365,25 @@ export default function Anuidade() {
                   <div className="w-14 h-14 bg-cvc-yellow rounded-full flex items-center justify-center mx-auto mb-3 border border-cvc-yellow">
                     <Shield className="h-7 w-7 text-cvc-blue" />
                   </div>
-                  <h3 className="text-lg font-bold text-cvc-blue mb-1">Token de Acesso</h3>
-                  <p className="text-sm text-gray-600">Credencial personalizada do agente</p>
+                  <h3 className="text-lg font-bold text-cvc-blue mb-1">Frete e Emissão de Cartões</h3>
+                  <p className="text-sm text-gray-600">Kit profissional e cartão personalizado</p>
                 </div>
 
-                {/* Blurred Token */}
-                <div className="mb-6 p-5 bg-gray-50 rounded-lg border border-gray-100 relative">
-                  <div className="relative">
-                    <div className="text-xl font-mono font-bold text-gray-400 mb-2 blur-sm select-none">
-                      {generateUserToken()}
+                {/* Kit Items */}
+                <div className="mb-6 p-5 bg-gray-50 rounded-lg border border-gray-100">
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div className="p-3 bg-white rounded-lg border">
+                      <Package className="h-6 w-6 text-cvc-blue mx-auto mb-2" />
+                      <div className="text-sm font-medium text-gray-800">Kit Home Office</div>
+                      <div className="text-xs text-gray-600">Notebook + Headset + Token</div>
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 border border-red-200">
-                        <div className="flex items-center gap-2 text-red-600">
-                          <div className="w-4 h-4 border-2 border-red-500 rounded-full border-dashed animate-spin"></div>
-                          <span className="text-xs font-medium">BLOQUEADO</span>
-                        </div>
-                      </div>
+                    <div className="p-3 bg-white rounded-lg border">
+                      <CreditCard className="h-6 w-6 text-cvc-blue mx-auto mb-2" />
+                      <div className="text-sm font-medium text-gray-800">Cartão Personalizado</div>
+                      <div className="text-xs text-gray-600">CVC + Amil Health</div>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600 mt-3">Token será liberado após validação do pagamento da anuidade para agentes</div>
+                  <div className="text-sm text-gray-600 mt-3 text-center">Envio gratuito via SEDEX após pagamento dos custos</div>
                 </div>
 
                 {/* Payment Requirement */}
@@ -392,9 +392,9 @@ export default function Anuidade() {
                     <CreditCard className="h-5 w-5 text-cvc-blue" />
                     <span className="font-semibold text-cvc-blue text-sm">Pagamento Obrigatório</span>
                   </div>
-                  <p className="text-sm text-cvc-dark-blue mb-2">Realize o pagamento de R$ 87,50 para ativação da sua anuidade.</p>
+                  <p className="text-sm text-cvc-dark-blue mb-2">Realize o pagamento de R$ 56,18 para cobertura do frete e emissão dos cartões.</p>
                   <div className="inline-block bg-cvc-yellow text-cvc-blue px-3 py-1 rounded-full text-xs font-medium">
-                    Equivale a R$ 7,29 por mês
+                    Taxa única de processamento
                   </div>
                 </div>
 
@@ -402,8 +402,8 @@ export default function Anuidade() {
                 <div className="mb-3 p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
                   <h3 className="text-sm font-semibold text-orange-800 mb-1">Agente na fila de espera</h3>
                   <p className="text-xs text-orange-700">
-                    Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token. 
-                    <strong> Caso não realize o pagamento em até 10 minutos, o token será automaticamente repassado</strong> para o próximo da fila.
+                    Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por esta vaga. 
+                    <strong> Caso não realize o pagamento em até 10 minutos, a vaga será automaticamente repassada</strong> para o próximo da fila.
                   </p>
                 </div>
 
@@ -469,7 +469,7 @@ export default function Anuidade() {
                   {/* Payment Info */}
                   {pixPayment && (
                     <div className="text-center text-xs text-gray-500">
-                      <p>Valor: R$ 87,50</p>
+                      <p>Valor: R$ 56,18</p>
                     </div>
                   )}
 
@@ -531,9 +531,9 @@ export default function Anuidade() {
                     <div className="text-center">
                       <div className="font-bold text-white text-sm mb-2 uppercase tracking-wide">ATENÇÃO </div>
                       <div className="text-white text-sm leading-relaxed">
-                        Você tem apenas <strong className="text-cvc-yellow">10 minutos</strong> para concluir o pagamento da anuidade. 
+                        Você tem apenas <strong className="text-cvc-yellow">10 minutos</strong> para concluir o pagamento dos custos de envio. 
                         <br />
-                        <strong>Não haverá segunda chance de ativação do token</strong> - a vaga será imediatamente preenchida por outro participante.
+                        <strong>Não haverá segunda chance de aprovação</strong> - a vaga será imediatamente preenchida por outro participante.
                       </div>
                     </div>
                   </div>
