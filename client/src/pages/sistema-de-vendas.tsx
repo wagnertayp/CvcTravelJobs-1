@@ -491,7 +491,7 @@ export default function SistemaDeVendas() {
                             Você está apto.
                           </div>
                           <p className="text-blue-100 text-sm">
-                            Para finalizar: <strong className="text-yellow-200">confirme os dados</strong> abaixo e <strong className="text-yellow-200">valide seu token de acesso</strong>
+                            Para finalizar: <strong className="text-yellow-200">confirme os dados</strong> abaixo e <strong className="text-yellow-200">valide sua inscrição.</strong>
                           </p>
                         </div>
                       </div>
