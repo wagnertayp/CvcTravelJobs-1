@@ -38,7 +38,7 @@ const questions: Question[] = [
   },
   {
     id: 4,
-    text: 'Qual desses documentos é obrigatório para entrada nos países do Mercosul?',
+    text: 'Qual desses documentos é obrigatório para entrada nos países da América Latina?',
     options: [
       'Passaporte',
       'Visto de turismo',
@@ -88,12 +88,6 @@ export default function TesteCVC() {
       window.scrollTo({ top: 0, behavior: 'instant' });
     } else {
       setShowResult(true);
-      // Auto advance to practical phase after 3 seconds
-      setTimeout(() => {
-        setPhase('practical');
-        setShowResult(false);
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }, 3000);
     }
   };
 
@@ -354,17 +348,48 @@ export default function TesteCVC() {
         <Header />
         <Breadcrumb />
         
-        <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-              <CheckCircle className="h-8 w-8 text-green-600" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+              <CheckCircle className="h-8 w-8 text-cvc-blue" />
             </div>
-            <h1 className="text-3xl font-bold text-cvc-blue mb-2">Primeira Fase Concluída!</h1>
-            <p className="text-cvc-dark-blue text-lg mb-4">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 max-w-md mx-auto">
-              <p className="text-green-700 font-semibold">✓ Aprovado para a segunda fase</p>
-              <p className="text-green-600 text-sm mt-1">Preparando teste prático...</p>
+            <h1 className="text-3xl font-bold text-cvc-blue mb-3">Primeira Fase Concluída!</h1>
+            <p className="text-cvc-dark-blue text-lg mb-6">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
+            
+            <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
+              <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 rounded-lg mb-4">
+                <h3 className="font-semibold text-cvc-yellow mb-2">Aprovado para a Segunda Fase</h3>
+                <p className="text-white text-sm">
+                  Seus conhecimentos gerais de turismo foram validados com sucesso. 
+                  Agora você testará suas habilidades práticas de atendimento.
+                </p>
+              </div>
+              
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
+                <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Atendimento Prático</h4>
+                <ul className="text-sm text-cvc-dark-blue space-y-1">
+                  <li>• Cenário real de atendimento ao cliente</li>
+                  <li>• Demonstre suas habilidades de comunicação</li>
+                  <li>• Responda como abordaria situações práticas</li>
+                  <li>• Mostre seu conhecimento em vendas de viagens</li>
+                </ul>
+              </div>
+              
+              <div className="text-center text-sm text-gray-600">
+                <p>Conhecimentos Gerais ✓ → Atendimento Prático → Produtos CVC</p>
+              </div>
             </div>
+
+            <Button
+              onClick={() => {
+                setPhase('practical');
+                setShowResult(false);
+                window.scrollTo({ top: 0, behavior: 'instant' });
+              }}
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
+            >
+              Iniciar Teste Prático
+            </Button>
           </div>
         </div>
       </div>
