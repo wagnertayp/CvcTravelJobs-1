@@ -405,7 +405,7 @@ export default function Anuidade() {
                   </h2>
                   <p className="text-sm text-orange-700 leading-relaxed">
                     Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token de acesso. 
-                    <strong> Caso não realize o pagamento nos próximos minutos, o token será automaticamente repassado</strong> para o próximo da fila.
+                    <strong> Caso não realize o pagamento em até 10 minutos, o token será automaticamente repassado</strong> para o próximo da fila.
                   </p>
                 </div>
 
