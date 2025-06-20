@@ -355,7 +355,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
           </div>
 
           <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
-            <div className="bg-cvc-yellow/10 border-l-4 border-cvc-blue p-6 rounded-lg mb-6">
+            <div className="bg-cvc-yellow/10 border-l-4 border-cvc-blue p-6 rounded-lg mb-6 ml-[-11px] mr-[-11px]">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-8 bg-cvc-blue rounded-full flex items-center justify-center">
                   <User className="h-4 w-4 text-white" />
