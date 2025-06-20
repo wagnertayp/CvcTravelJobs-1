@@ -253,7 +253,7 @@ export default function TesteCVC() {
       <Breadcrumb />
       <div className="max-w-4xl mx-auto px-4 py-12 pt-[19px] pb-[19px]">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-cvc-blue mb-2">Teste de Conhecimentos CVC</h1>
+          <h1 className="font-bold text-cvc-blue mb-2 text-[26px]">Teste de Conhecimentos CVC</h1>
           <p className="text-cvc-dark-blue">Conhecimentos Gerais de Turismo</p>
         </div>
 
