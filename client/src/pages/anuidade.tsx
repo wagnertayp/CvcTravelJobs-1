@@ -414,14 +414,14 @@ export default function Anuidade() {
                 </div>
 
                 {/* Shipping Address */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 mb-4 shadow-sm">
+                <div className="bg-gradient-to-r from-cvc-yellow/10 to-cvc-yellow/20 border border-cvc-yellow/30 rounded-lg p-4 mb-4 shadow-sm">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-cvc-blue rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin className="h-4 w-4 text-white" />
+                    <div className="w-8 h-8 bg-cvc-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <MapPin className="h-4 w-4 text-cvc-blue" />
                     </div>
                     <div className="flex-1">
                       <h5 className="font-medium text-cvc-blue text-sm mb-2">Endereço de Entrega</h5>
-                      <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-blue-200">
+                      <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-cvc-yellow/30">
                         <div className="text-sm text-gray-700">
                           {(() => {
                             const shippingData = localStorage.getItem('shippingAddress');
@@ -523,7 +523,7 @@ export default function Anuidade() {
                   )}
 
                   {/* Customer Queue Display */}
-                  <div className="mt-3 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-lg p-4 shadow-sm">
+                  <div className="mt-3 bg-gradient-to-br from-cvc-blue/10 to-cvc-blue/20 border border-cvc-blue/30 rounded-lg p-4 shadow-sm">
                     <div className="flex items-center gap-2 mb-3">
                       <h3 className="font-semibold text-cvc-blue text-sm">Central de Atendimento Ativa</h3>
                       <span className="ml-auto text-xs text-gray-600">{Math.floor(Math.random() * (23 - 15 + 1)) + 15} clientes aguardando</span>
@@ -542,7 +542,7 @@ export default function Anuidade() {
                         const commission = Math.round(client.value * commissionRate);
                         
                         return (
-                          <div key={index} className="flex items-center justify-between bg-white rounded px-3 py-2 text-xs border border-blue-100">
+                          <div key={index} className="flex items-center justify-between bg-white rounded px-3 py-2 text-xs border border-cvc-blue/20">
                             <div className="flex items-center gap-2">
                               <div className="w-6 h-6 bg-cvc-blue rounded-full flex items-center justify-center text-white font-bold text-xs">
                                 {client.name.charAt(0)}
