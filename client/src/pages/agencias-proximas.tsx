@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AgenciasProximas() {
   const [, setLocation] = useLocation();
+  const [selectedAgency, setSelectedAgency] = useState<number | null>(null);
   
   // Get user data from localStorage
   const validatedCPFData = JSON.parse(localStorage.getItem('validatedCPFData') || '{}');
@@ -58,17 +59,17 @@ export default function AgenciasProximas() {
     },
     {
       id: 3,
-      name: "CVC Planaltina",
-      address: "Av. Uberdan Cardoso, 120 - Planaltina, DF",
-      distance: "15.2 km",
-      phone: "(61) 3389-4500",
-      hours: "8h às 18h",
-      rating: 4.4,
-      manager: "Fernanda Alves",
+      name: "CVC Park Shopping",
+      address: "SAI/SO Área 6580 - Guará, Brasília - DF",
+      distance: "12.1 km",
+      phone: "(61) 3387-4500",
+      hours: "10h às 22h",
+      rating: 4.7,
+      manager: "Fernanda Oliveira",
       team: [
-        { name: "Lucas Martins", role: "Supervisor de Vendas", commission: "R$ 7.400" },
-        { name: "Priscila Sousa", role: "Consultora Sênior", commission: "R$ 5.800" },
-        { name: "Rafael Santos", role: "Consultor", commission: "R$ 4.700" },
+        { name: "Lucas Mendes", role: "Supervisor de Vendas", commission: "R$ 7.600" },
+        { name: "Patrícia Alves", role: "Consultora Sênior", commission: "R$ 5.900" },
+        { name: "Ricardo Santos", role: "Consultor", commission: "R$ 4.800" },
         { name: userDisplayName, role: "Agente de Viagens (Home Office)", commission: "R$ 3.500 - R$ 6.200" }
       ],
       totalSales: "R$ 580.000",
@@ -76,43 +77,43 @@ export default function AgenciasProximas() {
     }
   ];
 
-  const [selectedAgency, setSelectedAgency] = useState<number | null>(null);
+  const selectedAgencyData = agencies.find(a => a.id === selectedAgency);
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <Breadcrumb />
-      <div className="max-w-7xl mx-auto px-6 py-16 pt-[13px] pb-[13px]">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mt-[-7px] mb-[-7px]">
-            <MapPin className="h-8 w-8 text-cvc-blue" />
-          </div>
-          <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Agências CVC Próximas</h1>
-          <p className="text-cvc-dark-blue font-medium text-[16px] mt-[9px] mb-[9px] pt-[0px] pb-[0px]">
-            Encontre sua equipe de trabalho em {userCity}/{userState}
-          </p>
-          
-          <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 rounded-lg max-w-2xl mx-auto">
-            <p className="text-white text-sm font-medium">
-              <strong>100% Home Office</strong> • Segunda a Sexta • Horários Flexíveis
-            </p>
+      
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Home Office Notice */}
+        <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-4 mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-cvc-yellow rounded-full flex items-center justify-center">
+              <MapPin className="h-4 w-4 text-cvc-blue" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-cvc-blue">Trabalho 100% Home Office</h3>
+              <p className="text-sm text-cvc-dark-blue">Segunda a sexta, horário flexível - você trabalhará de casa integrado à equipe da agência</p>
+            </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-cvc-blue mb-2">Agências Próximas</h1>
+          <p className="text-cvc-dark-blue">Selecione uma agência para integrar sua equipe em {userCity}/{userState}</p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Lista de Agências */}
-          <div className="space-y-6">
-            <h2 className="text-xl font-bold text-cvc-blue mb-4">Agências Disponíveis</h2>
-            
+          <div className="lg:col-span-2 space-y-4">
             {agencies.map((agency) => (
               <Card 
                 key={agency.id} 
-                className={`border-2 transition-all duration-300 cursor-pointer hover:shadow-lg ${
+                className={`cursor-pointer transition-all ${
                   selectedAgency === agency.id 
                     ? 'border-cvc-blue bg-cvc-yellow/5' 
                     : 'border-gray-200 hover:border-cvc-blue/50'
                 }`}
-                onClick={() => setSelectedAgency(agency.id)}
               >
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
@@ -131,7 +132,7 @@ export default function AgenciasProximas() {
                 </CardHeader>
                 
                 <CardContent className="pt-0">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-4 text-sm mb-4">
                     <div className="flex items-center gap-2">
                       <Phone className="h-4 w-4 text-cvc-blue" />
                       <span>{agency.phone}</span>
@@ -142,14 +143,28 @@ export default function AgenciasProximas() {
                     </div>
                   </div>
                   
+                  <Button
+                    onClick={() => setSelectedAgency(agency.id)}
+                    className={`w-full ${
+                      selectedAgency === agency.id
+                        ? 'bg-cvc-yellow text-cvc-blue hover:bg-cvc-yellow/90'
+                        : 'bg-cvc-blue text-white hover:bg-cvc-dark-blue'
+                    }`}
+                  >
+                    {selectedAgency === agency.id ? 'Agência Selecionada' : 'Selecionar Agência'}
+                  </Button>
+                  
                   {selectedAgency === agency.id && (
                     <div className="mt-4 p-4 bg-cvc-yellow/10 rounded-lg border border-cvc-blue/20">
                       <div className="flex items-center gap-2 mb-3">
                         <Award className="h-5 w-5 text-cvc-blue" />
                         <span className="font-semibold text-cvc-blue">Agência Selecionada</span>
                       </div>
-                      <p className="text-sm text-cvc-dark-blue">
+                      <p className="text-sm text-cvc-dark-blue mb-2">
                         Você trabalhará em home office integrado à equipe desta agência.
+                      </p>
+                      <p className="text-sm text-cvc-blue font-semibold">
+                        Gerente: {agency.manager}
                       </p>
                     </div>
                   )}
@@ -160,7 +175,7 @@ export default function AgenciasProximas() {
 
           {/* Detalhes da Equipe */}
           <div className="lg:sticky lg:top-6">
-            {selectedAgency ? (
+            {selectedAgencyData ? (
               <Card className="border-cvc-blue/30">
                 <CardHeader>
                   <div className="flex items-center gap-3">
@@ -170,102 +185,73 @@ export default function AgenciasProximas() {
                     <div>
                       <CardTitle className="text-cvc-blue">Equipe de Trabalho</CardTitle>
                       <p className="text-sm text-gray-600">
-                        {agencies.find(a => a.id === selectedAgency)?.name}
+                        {selectedAgencyData.name}
+                      </p>
+                      <p className="text-sm font-semibold text-cvc-blue mt-1">
+                        Gerente: {selectedAgencyData.manager}
                       </p>
                     </div>
                   </div>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-4">
-                    {agencies.find(a => a.id === selectedAgency)?.team.map((member, index) => (
-                      <div 
-                        key={index} 
-                        className={`p-4 rounded-lg border-2 ${
-                          member.name === userDisplayName 
-                            ? 'border-cvc-yellow bg-cvc-yellow/10' 
-                            : 'border-gray-200 bg-gray-50'
-                        }`}
-                      >
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h4 className={`font-semibold ${
-                              member.name === userDisplayName ? 'text-cvc-blue' : 'text-gray-800'
-                            }`}>
-                              {member.name}
-                              {member.name === userDisplayName && (
-                                <span className="ml-2 text-xs bg-cvc-blue text-white px-2 py-1 rounded">
-                                  VOCÊ
-                                </span>
-                              )}
-                            </h4>
-                            <p className="text-sm text-gray-600">{member.role}</p>
-                          </div>
-                          <div className="text-right">
-                            <div className="flex items-center gap-1 text-green-600">
-                              <TrendingUp className="h-4 w-4" />
-                              <span className="font-bold text-sm">{member.commission}</span>
-                            </div>
-                            <span className="text-xs text-gray-500">Comissão/mês</span>
-                          </div>
+                  <div className="space-y-3 mb-6">
+                    {selectedAgencyData.team.map((member, index) => (
+                      <div key={index} className="flex justify-between items-start p-3 rounded-lg bg-gray-50">
+                        <div>
+                          <p className="font-medium text-gray-900">{member.name}</p>
+                          <p className="text-sm text-gray-600">{member.role}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm font-medium text-cvc-blue">{member.commission}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  
-                  <div className="mt-6 p-4 bg-cvc-blue/5 rounded-lg">
-                    <h4 className="font-semibold text-cvc-blue mb-2">Performance da Equipe</h4>
-                    <div className="space-y-2 text-sm">
+
+                  <div className="bg-cvc-blue/5 rounded-lg p-4 mb-6">
+                    <h4 className="font-semibold text-cvc-blue mb-3">Performance da Agência</h4>
+                    <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span>Meta Mensal:</span>
-                        <span className="font-bold text-cvc-blue">
-                          {agencies.find(a => a.id === selectedAgency)?.monthlyGoal}
-                        </span>
+                        <span className="text-sm text-gray-600">Vendas do Mês:</span>
+                        <span className="font-medium text-cvc-blue">{selectedAgencyData.totalSales}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Vendas Atuais:</span>
-                        <span className="font-bold text-green-600">
-                          {agencies.find(a => a.id === selectedAgency)?.totalSales}
-                        </span>
+                        <span className="text-sm text-gray-600">Meta Mensal:</span>
+                        <span className="font-medium text-gray-900">{selectedAgencyData.monthlyGoal}</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
+                      <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
                         <div 
-                          className="bg-green-500 h-2 rounded-full" 
+                          className="bg-cvc-blue h-2 rounded-full" 
                           style={{ 
-                            width: `${Math.min(100, 
-                              (parseInt(agencies.find(a => a.id === selectedAgency)?.totalSales.replace(/[R$.,\s]/g, '') || '0') / 
-                               parseInt(agencies.find(a => a.id === selectedAgency)?.monthlyGoal.replace(/[R$.,\s]/g, '') || '1')) * 100
-                            )}%` 
+                            width: `${Math.min((parseInt(selectedAgencyData.totalSales.replace(/[^\d]/g, '')) / parseInt(selectedAgencyData.monthlyGoal.replace(/[^\d]/g, ''))) * 100, 100)}%` 
                           }}
                         ></div>
                       </div>
-                      <p className="text-xs text-gray-600 text-center mt-1">
-                        {Math.round(
-                          (parseInt(agencies.find(a => a.id === selectedAgency)?.totalSales.replace(/[R$.,\s]/g, '') || '0') / 
-                           parseInt(agencies.find(a => a.id === selectedAgency)?.monthlyGoal.replace(/[R$.,\s]/g, '') || '1')) * 100
-                        )}% da meta atingida
+                      <p className="text-xs text-gray-500 text-center mt-1">
+                        {Math.round((parseInt(selectedAgencyData.totalSales.replace(/[^\d]/g, '')) / parseInt(selectedAgencyData.monthlyGoal.replace(/[^\d]/g, ''))) * 100)}% da meta alcançada
                       </p>
                     </div>
                   </div>
-                  
-                  <Button
+
+                  <Button 
                     onClick={() => setLocation('/conta-bancaria')}
-                    className="w-full mt-6 bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
+                    className="w-full bg-cvc-blue text-white hover:bg-cvc-dark-blue"
                   >
-                    Confirmar Agência e Continuar
+                    Confirmar Seleção
                   </Button>
                 </CardContent>
               </Card>
             ) : (
               <Card className="border-gray-200">
-                <CardContent className="text-center py-12">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-8 w-8 text-gray-400" />
+                <CardContent className="pt-6">
+                  <div className="text-center py-8">
+                    <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                    <h3 className="font-medium text-gray-900 mb-2">Selecione uma Agência</h3>
+                    <p className="text-sm text-gray-600">
+                      Escolha uma agência para ver os detalhes da equipe e comissões
+                    </p>
                   </div>
-                  <h3 className="font-semibold text-gray-600 mb-2">Selecione uma Agência</h3>
-                  <p className="text-sm text-gray-500">
-                    Clique em uma agência para ver a equipe de trabalho e estimativas de comissão.
-                  </p>
                 </CardContent>
               </Card>
             )}

@@ -628,6 +628,12 @@ Changelog:
   * Created professional evaluation layout with approval message
   * Added manual progression control with "Continuar para Produtos CVC" button
   * Enhanced user experience with clear feedback on practical performance
+- June 20, 2025. Enhanced agency selection with prominent manager display:
+  * Added "Selecionar Agência" buttons to each agency card
+  * Implemented agency selection state with visual feedback (yellow background when selected)
+  * Added prominent manager name display in both selection notice and team details sidebar
+  * Enhanced selection confirmation with manager name highlighted in blue
+  * Applied CVC brand colors throughout selection interface
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
