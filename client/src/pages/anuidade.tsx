@@ -389,9 +389,6 @@ export default function Anuidade() {
                 {/* Pending Payment Warning */}
                 <div className="p-5 bg-orange-50 border-2 border-orange-200 rounded-lg mb-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <AlertTriangle className="h-5 w-5 text-orange-600" />
-                    </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-orange-800 text-base mb-3">Pendência Encontrada</h4>
                       <div className="space-y-3 text-sm text-orange-700 mb-4">
@@ -406,7 +403,7 @@ export default function Anuidade() {
                       </div>
                       <div className="p-3 bg-orange-100 rounded-lg border border-orange-300">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-orange-700 font-semibold">Valor Total a Pagar:</span>
+                          <span className="text-sm text-orange-700 font-semibold">Total a Pagar:</span>
                           <span className="text-lg font-bold text-orange-800">R$ 56,18</span>
                         </div>
                       </div>
