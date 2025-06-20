@@ -83,7 +83,6 @@ export default function AgenciasProximas() {
     <div className="min-h-screen bg-white">
       <Header />
       <Breadcrumb />
-      
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Home Office Notice */}
         <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-4 mb-8">
@@ -94,7 +93,7 @@ export default function AgenciasProximas() {
         </div>
 
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-cvc-blue mb-2">Agências Próximas</h1>
+          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências Próximas</h1>
           <p className="text-cvc-dark-blue">Selecione uma agência para integrar sua equipe em {userCity}/{userState}</p>
         </div>
 
