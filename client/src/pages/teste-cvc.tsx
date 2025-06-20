@@ -215,7 +215,6 @@ export default function TesteCVC() {
       <div className="min-h-screen bg-white">
         <Header />
         <Breadcrumb />
-        
         <div className="max-w-4xl mx-auto px-4 py-12">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
@@ -246,7 +245,7 @@ export default function TesteCVC() {
 
             <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
               <h3 className="font-semibold text-cvc-blue mb-2">Resultado Final</h3>
-              <p className="text-cvc-dark-blue">
+              <p className="text-cvc-dark-blue ml-[-37px] mr-[-37px]">
                 Você demonstrou conhecimento adequado sobre turismo, habilidades práticas de atendimento e conhecimento dos produtos CVC.
                 Está qualificado para prosseguir com o cadastro bancário.
               </p>
