@@ -340,9 +340,7 @@ export default function Anuidade() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-cvc-blue mb-3">Sistema Disponível</h1>
-          <p className="text-gray-600 text-sm">
-            Equipamentos e cartões personalizados para agentes credenciados
-          </p>
+          <p className="text-gray-600 text-sm">Cheque as pendências restantes para acessar o seu Sistema de Vendas com token válido.</p>
           
           {/* Sales System Preview */}
           <div className="max-w-4xl mx-auto mb-6">
