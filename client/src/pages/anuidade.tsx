@@ -401,7 +401,7 @@ export default function Anuidade() {
                             <div className="text-xs font-medium text-orange-800">Frete SEDEX</div>
                             <div className="text-xs font-bold text-orange-800">R$ 18,50</div>
                           </div>
-                          <div className="text-xs text-orange-600">Kit profissional completo</div>
+                          <div className="text-xs text-orange-600 text-left">Kit profissional completo</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
                           <div className="flex justify-between items-start mb-1">
