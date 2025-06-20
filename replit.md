@@ -518,6 +518,11 @@ Changelog:
   * Enhanced progress bar with shadow effects and improved visual feedback
   * Added hover scale animations and premium styling throughout
   * Improved typography with larger text sizes and better spacing
+- June 20, 2025. Reorganized quiz layout for better user flow:
+  * Removed circular question counter icon for cleaner header design
+  * Moved instruction text to highlighted box below question title
+  * Centered submit button at bottom with improved styling
+  * Enhanced visual hierarchy with better spacing and organization
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

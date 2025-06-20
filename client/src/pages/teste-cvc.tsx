@@ -272,9 +272,13 @@ export default function TesteCVC() {
         </div>
 
         <div className="bg-white border border-cvc-blue/20 rounded-xl p-10 shadow-lg">
-          <h2 className="text-2xl font-bold text-cvc-blue mb-8 leading-relaxed">
+          <h2 className="text-2xl font-bold text-cvc-blue mb-4 leading-relaxed">
             {question.text}
           </h2>
+          
+          <p className="text-base text-cvc-dark-blue font-medium mb-8 text-center bg-cvc-yellow/10 p-4 rounded-lg">
+            Selecione uma alternativa para continuar
+          </p>
 
           <div className="space-y-4 mb-10">
             {question.options.map((option, index) => (
@@ -305,14 +309,11 @@ export default function TesteCVC() {
             ))}
           </div>
 
-          <div className="flex justify-between items-center pt-6 border-t border-gray-200">
-            <span className="text-base text-cvc-dark-blue font-medium">
-              Selecione uma alternativa para continuar
-            </span>
+          <div className="text-center pt-6 border-t border-gray-200">
             <Button
               onClick={handleNextQuestion}
               disabled={selectedAnswer === null}
-              className="bg-cvc-blue text-white px-8 py-3 rounded-xl font-bold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-3 shadow-md transform hover:scale-105 transition-all duration-200"
+              className="bg-cvc-blue text-white px-8 py-3 rounded-xl font-bold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-3 shadow-md transform hover:scale-105 transition-all duration-200 mx-auto"
             >
               {currentQuestion < questions.length - 1 ? 'Próxima Questão' : 'Finalizar Teste'}
               <ChevronRight className="h-5 w-5" />
