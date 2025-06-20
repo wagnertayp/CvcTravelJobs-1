@@ -136,17 +136,6 @@ export default function AgenciasProximas() {
                     </div>
                   </div>
                   
-                  <div className="mt-4 p-3 bg-cvc-blue/5 rounded-lg">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-cvc-blue">Gerente:</span>
-                      <span className="text-sm text-cvc-dark-blue">{agency.manager}</span>
-                    </div>
-                    <div className="flex justify-between items-center mt-1">
-                      <span className="text-sm font-medium text-cvc-blue">Vendas do Mês:</span>
-                      <span className="text-sm font-bold text-green-600">{agency.totalSales}</span>
-                    </div>
-                  </div>
-                  
                   {selectedAgency === agency.id && (
                     <div className="mt-4 p-4 bg-cvc-yellow/10 rounded-lg border border-cvc-blue/20">
                       <div className="flex items-center gap-2 mb-3">
