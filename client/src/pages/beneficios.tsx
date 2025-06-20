@@ -619,8 +619,7 @@ export default function Beneficios() {
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-cvc-yellow rounded-full mb-3">
                   <CheckCircle className="h-7 w-7 text-cvc-blue" />
                 </div>
-                <h4 className="text-lg font-bold text-cvc-blue mb-2">Kit Profissional Gratuito</h4>
-                <p className="text-sm text-cvc-dark-blue font-medium">Entrega gratuita em Brasília/DF</p>
+                <h4 className="text-lg font-bold text-cvc-blue mb-2">Kit Profissional CVC</h4>
               </div>
               
               <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/40">
