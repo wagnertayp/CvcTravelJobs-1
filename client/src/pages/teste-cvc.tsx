@@ -154,7 +154,7 @@ export default function TesteCVC() {
               <h3 className="font-bold text-cvc-blue text-lg mb-4">
                 8. Quais dos serviços abaixo podem ser vendidos por uma agência CVC?
               </h3>
-              <p className="text-cvc-dark-blue text-sm mb-6 bg-cvc-yellow/10 p-4 rounded-lg">
+              <p className="text-cvc-dark-blue text-sm bg-cvc-yellow/10 p-4 rounded-lg mt-[14px] mb-[14px] pl-[1px] pr-[1px] pt-[4px] pb-[4px]">
                 Assinale todos que se aplicam
               </p>
               
