@@ -249,7 +249,7 @@ export default function Regiao() {
               <CheckCircle className="h-5 w-5 text-green-600" />
               <div>
                 <h2 className="text-lg font-semibold text-cvc-blue">Cadastro realizado</h2>
-                <p className="text-sm text-cvc-dark-blue">Confirme os dados e prossiga</p>
+                <p className="text-sm text-cvc-dark-blue">Confirme os seus dados e prossiga</p>
               </div>
             </div>
 
