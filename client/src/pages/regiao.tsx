@@ -244,55 +244,55 @@ export default function Regiao() {
 
         {/* Dados do CPF */}
         {cpfData && (
-          <div className="bg-white rounded-lg border border-gray-200 p-6 mt-6">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900">Cadastro realizado</h2>
-                <p className="text-sm text-gray-600">Confirme seus dados abaixo e prossiga</p>
-              </div>
+          <div className="bg-white rounded-lg border border-cvc-blue/20 p-6 mt-6">
+            <div className="flex items-center gap-3 mb-4">
               <CheckCircle className="h-5 w-5 text-green-600" />
+              <div>
+                <h2 className="text-lg font-semibold text-cvc-blue">Cadastro realizado</h2>
+                <p className="text-sm text-cvc-dark-blue">Confirme seus dados abaixo e prossiga</p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div className="space-y-3">
                 <div>
-                  <div className="text-gray-600">Nome Completo</div>
-                  <div className="font-medium text-gray-900">{cpfData.nome}</div>
+                  <div className="text-cvc-dark-blue/70">Nome Completo</div>
+                  <div className="font-medium text-cvc-blue">{cpfData.nome}</div>
                 </div>
                 <div>
-                  <div className="text-gray-600">Nome da Mãe</div>
-                  <div className="font-medium text-gray-900">{cpfData.nome_mae}</div>
+                  <div className="text-cvc-dark-blue/70">Nome da Mãe</div>
+                  <div className="font-medium text-cvc-blue">{cpfData.nome_mae}</div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <div>
-                  <div className="text-gray-600">Data de Nascimento</div>
-                  <div className="font-medium text-gray-900">
+                  <div className="text-cvc-dark-blue/70">Data de Nascimento</div>
+                  <div className="font-medium text-cvc-blue">
                     {new Date(cpfData.data_nascimento).toLocaleDateString('pt-BR')}
                   </div>
                 </div>
                 <div>
-                  <div className="text-gray-600">Sexo</div>
-                  <div className="font-medium text-gray-900">
+                  <div className="text-cvc-dark-blue/70">Sexo</div>
+                  <div className="font-medium text-cvc-blue">
                     {cpfData.sexo === 'M' ? 'Masculino' : 'Feminino'}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+            <div className="mt-4 p-3 bg-cvc-yellow/10 border border-cvc-yellow/30 rounded-lg">
               <div className="flex items-center gap-2 mb-1">
                 <CheckCircle className="h-4 w-4 text-green-600" />
-                <span className="font-medium text-gray-900 text-sm">Dados Corretamente Adicionados</span>
+                <span className="font-medium text-cvc-blue text-sm">Dados Corretamente Adicionados</span>
               </div>
-              <p className="text-xs text-gray-600">Informações validadas com sucesso. Continue para cadastrar seu recebimento.</p>
+              <p className="text-xs text-cvc-dark-blue">Informações validadas com sucesso. Continue para cadastrar seu recebimento.</p>
             </div>
 
             <div className="mt-6">
               <Button
                 onClick={() => showLoadingAndNavigate('Configurando conta bancária...', '/conta-bancaria')}
-                className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-700"
+                className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
               >Prosseguir</Button>
             </div>
           </div>

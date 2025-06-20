@@ -488,6 +488,11 @@ Changelog:
   * Added two-button choice: "Prosseguir com Pagamento" and "Desistir da Vaga"
   * Positioned before final configuration step to ensure user commitment
   * Integrated seamless flow from system configuration to payment process
+- June 20, 2025. Updated region page CPF data display with CVC brand colors:
+  * Applied CVC blue and yellow color scheme to replace generic gray colors
+  * Repositioned CheckCircle icon to front of "Cadastro realizado" title
+  * Used CVC blue for titles and data values, CVC yellow background for confirmation section
+  * Updated button hover state to use CVC dark blue for brand consistency
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
