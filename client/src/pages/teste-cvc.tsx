@@ -272,7 +272,7 @@ export default function TesteCVC() {
         </div>
 
         <div className="bg-white border border-cvc-blue/20 rounded-xl p-10 shadow-lg">
-          <h2 className="text-2xl font-bold text-cvc-blue leading-relaxed text-center mt-[-10px] mb-[-10px]">
+          <h2 className="text-2xl font-bold text-cvc-blue leading-relaxed text-center mt-[-10px] mb-[-10px] ml-[-27px] mr-[-27px]">
             {question.text}
           </h2>
           
