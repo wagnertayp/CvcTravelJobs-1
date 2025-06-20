@@ -21,6 +21,7 @@ import {
 export default function Anuidade() {
   const [, setLocation] = useLocation();
   const [userData, setUserData] = useState<any>({});
+  const [userLocation, setUserLocation] = useState<string>('');
   const [pixPayment, setPixPayment] = useState<any>(null);
   const [isGeneratingPix, setIsGeneratingPix] = useState(false);
   const [pixError, setPixError] = useState("");
@@ -34,6 +35,13 @@ export default function Anuidade() {
     // Try to get validated CPF data from API validation
     const validatedData = localStorage.getItem('validatedCPFData');
     const sessionData = sessionStorage.getItem('cpfData');
+    
+    // Get user location from CEP validation
+    const locationData = localStorage.getItem('userLocationData');
+    if (locationData) {
+      const parsedLocation = JSON.parse(locationData);
+      setUserLocation(parsedLocation.city || '');
+    }
     
     let cpfData = null;
     
@@ -396,7 +404,7 @@ export default function Anuidade() {
                     ⚠️ Agente na Fila de Espera
                   </h2>
                   <p className="text-sm text-orange-700 leading-relaxed">
-                    Há outro candidato aguardando por este token de acesso. 
+                    Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token de acesso. 
                     <strong> Caso não realize o pagamento nos próximos minutos, o token será automaticamente repassado</strong> para o próximo da fila.
                   </p>
                 </div>

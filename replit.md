@@ -481,6 +481,7 @@ Changelog:
   * Added orange warning message about agent in waiting queue
   * Emphasized urgency: token will be transferred if payment not completed
   * Streamlined interface to focus on PIX payment exclusively
+  * Integrated dynamic city name from CEP validation in queue pressure message
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
