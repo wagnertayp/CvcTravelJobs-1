@@ -36,7 +36,6 @@ export default function Breadcrumb() {
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-24 h-full bg-gradient-to-r from-white/3 to-transparent"></div>
       </div>
-      
       <div className="max-w-7xl mx-auto px-6 py-4 pt-[9px] pb-[9px] text-[15px] relative z-10">
         <nav className="flex items-center gap-3">
           <div className="relative">
@@ -45,7 +44,7 @@ export default function Breadcrumb() {
           </div>
           <div>
             <h1 className="text-white font-semibold text-[18px] drop-shadow-sm">{currentPage}</h1>
-            <p className="text-white/80 text-[13px]">CVC Agentes</p>
+            <p className="text-white/80 text-[13px]">CVC -Inscrição de Agentes</p>
           </div>
         </nav>
       </div>
