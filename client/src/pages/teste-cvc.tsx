@@ -360,7 +360,7 @@ export default function TesteCVC() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mb-4">
             <BookOpen className="h-8 w-8 text-cvc-blue" />
           </div>
-          <h1 className="font-bold text-cvc-blue mb-3 text-[26px]">Teste de Conhecimentos CVC</h1>
+          <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Teste de Conhecimentos CVC</h1>
           <p className="text-lg text-cvc-dark-blue font-medium">Conhecimentos Gerais de Turismo</p>
         </div>
 
