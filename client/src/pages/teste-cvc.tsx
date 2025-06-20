@@ -282,7 +282,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
             <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Parabéns, {userFirstName}!</h1>
-            <p className="text-cvc-dark-blue text-[14px]">Você foi aprovado no teste de conhecimentos gerais</p>
+            <p className="text-cvc-dark-blue text-[14px]">Você foi aprovado no teste de conhecimentos gerais e está apto para continuar.</p>
           </div>
 
           <div className="bg-white border border-cvc-blue/20 rounded-lg p-8 text-center">
