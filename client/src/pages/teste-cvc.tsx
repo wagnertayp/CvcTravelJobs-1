@@ -219,7 +219,7 @@ export default function TesteCVC() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
-            <h1 className="text-3xl font-bold text-cvc-blue mb-2">Parabéns, {userFirstName}!</h1>
+            <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Parabéns, {userFirstName}!</h1>
             <p className="text-cvc-dark-blue text-lg">Você foi aprovado no teste de conhecimentos</p>
           </div>
 
