@@ -251,71 +251,74 @@ export default function TesteCVC() {
     <div className="min-h-screen bg-white">
       <Header />
       <Breadcrumb />
-      <div className="max-w-4xl mx-auto px-4 py-12 pt-[19px] pb-[19px]">
-        <div className="text-center mb-8">
-          <h1 className="font-bold text-cvc-blue mb-2 text-[26px]">Teste de Conhecimentos CVC</h1>
-          <p className="text-cvc-dark-blue">Conhecimentos Gerais de Turismo</p>
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-cvc-yellow/20 rounded-2xl mb-6 shadow-lg">
+            <span className="text-3xl font-bold text-cvc-blue">{currentQuestion + 1}</span>
+          </div>
+          <h1 className="text-4xl font-bold text-cvc-blue mb-3">Teste de Conhecimentos CVC</h1>
+          <p className="text-lg text-cvc-dark-blue font-medium">Conhecimentos Gerais de Turismo</p>
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex justify-between text-sm text-cvc-dark-blue mb-2">
-            <span>Questão {currentQuestion + 1} de {questions.length}</span>
-            <span>{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
+        <div className="mb-10">
+          <div className="flex justify-between text-sm text-cvc-dark-blue mb-3">
+            <span className="font-medium">Questão {currentQuestion + 1} de {questions.length}</span>
+            <span className="font-bold text-cvc-blue">{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-gray-200 rounded-full h-3 shadow-sm">
             <div 
-              className="bg-cvc-blue h-2 rounded-full transition-all duration-300"
+              className="bg-cvc-blue h-3 rounded-full transition-all duration-500 shadow-sm"
               style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
             ></div>
           </div>
         </div>
 
-        <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
-          <h2 className="text-xl font-semibold text-cvc-blue mb-6">
+        <div className="bg-white border border-cvc-blue/20 rounded-xl p-10 shadow-lg">
+          <h2 className="text-2xl font-bold text-cvc-blue mb-8 leading-relaxed">
             {question.text}
           </h2>
 
-          <div className="space-y-3 mb-8">
+          <div className="space-y-4 mb-10">
             {question.options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
-                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${
+                className={`w-full text-left p-6 rounded-xl border-2 transition-all duration-300 transform hover:scale-[1.02] ${
                   selectedAnswer === index
-                    ? 'border-cvc-blue bg-cvc-blue/5'
-                    : 'border-gray-200 hover:border-cvc-blue/50 hover:bg-gray-50'
+                    ? 'border-cvc-blue bg-cvc-yellow/10 shadow-md'
+                    : 'border-gray-200 hover:border-cvc-blue/50 hover:bg-gray-50 hover:shadow-sm'
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                <div className="flex items-start gap-4">
+                  <div className={`min-w-[40px] h-10 rounded-lg flex items-center justify-center text-white font-bold text-lg ${
                     selectedAnswer === index
-                      ? 'border-cvc-blue bg-cvc-blue'
-                      : 'border-gray-300'
+                      ? 'bg-cvc-blue shadow-md'
+                      : 'bg-gray-400'
                   }`}>
-                    {selectedAnswer === index && (
-                      <div className="w-3 h-3 bg-white rounded-full"></div>
-                    )}
+                    {String.fromCharCode(65 + index)}
                   </div>
-                  <span className="font-medium text-gray-700">
-                    ({String.fromCharCode(65 + index)}) {option}
+                  <span className={`font-medium text-lg leading-relaxed ${
+                    selectedAnswer === index ? 'text-cvc-blue' : 'text-gray-700'
+                  }`}>
+                    {option}
                   </span>
                 </div>
               </button>
             ))}
           </div>
 
-          <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-500">
+          <div className="flex justify-between items-center pt-6 border-t border-gray-200">
+            <span className="text-base text-cvc-dark-blue font-medium">
               Selecione uma alternativa para continuar
             </span>
             <Button
               onClick={handleNextQuestion}
               disabled={selectedAnswer === null}
-              className="bg-cvc-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-2"
+              className="bg-cvc-blue text-white px-8 py-3 rounded-xl font-bold hover:bg-cvc-dark-blue disabled:opacity-50 flex items-center gap-3 shadow-md transform hover:scale-105 transition-all duration-200"
             >
-              {currentQuestion < questions.length - 1 ? 'Próxima' : 'Finalizar'}
-              <ChevronRight className="h-4 w-4" />
+              {currentQuestion < questions.length - 1 ? 'Próxima Questão' : 'Finalizar Teste'}
+              <ChevronRight className="h-5 w-5" />
             </Button>
           </div>
         </div>

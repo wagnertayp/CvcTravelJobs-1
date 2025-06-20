@@ -512,6 +512,12 @@ Changelog:
   * Real-time progress tracking with CVC brand colors and animations
   * Updated navigation flow from /regiao to test page before banking configuration
   * Integrated personalized user experience using CPF validation data
+- June 20, 2025. Enhanced quiz interface design with improved user experience:
+  * Replaced problematic radio button circles with letter-based selection badges
+  * Increased container width from max-w-4xl to max-w-5xl for better space utilization
+  * Enhanced progress bar with shadow effects and improved visual feedback
+  * Added hover scale animations and premium styling throughout
+  * Improved typography with larger text sizes and better spacing
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
