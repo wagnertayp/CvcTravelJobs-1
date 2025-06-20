@@ -163,6 +163,10 @@ export default function Beneficios() {
 
   const handleShippingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Save shipping address to localStorage for use in other pages
+    localStorage.setItem('shippingAddress', JSON.stringify(shippingAddress));
+    
     setAddressConfirmed(true);
     setShowEquipmentForm(false);
     // Proceed directly to next phase
