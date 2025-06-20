@@ -397,11 +397,17 @@ export default function Anuidade() {
                       <h4 className="font-semibold text-orange-800 text-sm mb-3">Pendências para Finalização</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                         <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
-                          <div className="text-xs font-medium text-orange-800 mb-1">Frete SEDEX</div>
+                          <div className="flex justify-between items-start mb-1">
+                            <div className="text-xs font-medium text-orange-800">Frete SEDEX</div>
+                            <div className="text-xs font-bold text-orange-800">R$ 18,50</div>
+                          </div>
                           <div className="text-xs text-orange-600">Kit profissional completo</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
-                          <div className="text-xs font-medium text-orange-800 mb-1">Taxa de Emissão dos Cartões</div>
+                          <div className="flex justify-between items-start mb-1">
+                            <div className="text-xs font-medium text-orange-800">Taxa de Emissão</div>
+                            <div className="text-xs font-bold text-orange-800">R$ 37,68</div>
+                          </div>
                           <div className="text-xs text-orange-600">Cartão CVC + Amil</div>
                         </div>
                       </div>
