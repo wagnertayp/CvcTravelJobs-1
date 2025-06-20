@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
-import { BookOpen, CheckCircle, XCircle, ChevronRight, Clock, User } from "lucide-react";
+import { BookOpen, CheckCircle, XCircle, ChevronRight, Clock, User, Package } from "lucide-react";
 import Header from "@/components/header";
 import Breadcrumb from "@/components/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -66,9 +66,10 @@ export default function TesteCVC() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [phase, setPhase] = useState<'quiz' | 'practical' | 'completed'>('quiz');
+  const [phase, setPhase] = useState<'quiz' | 'practical' | 'products' | 'completed'>('quiz');
   const [practicalAnswer, setPracticalAnswer] = useState('');
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [productAnswers, setProductAnswers] = useState<string[]>([]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
@@ -94,14 +95,27 @@ export default function TesteCVC() {
   };
 
   const handlePracticalSubmit = () => {
-    if (practicalAnswer.trim().length < 50) return;
+    if (practicalAnswer.trim().length < 15) return;
     
     setIsEvaluating(true);
     // Simulate real-time evaluation
     setTimeout(() => {
       setIsEvaluating(false);
-      setPhase('completed');
+      setPhase('products');
     }, 4000);
+  };
+
+  const handleProductToggle = (service: string) => {
+    setProductAnswers(prev => 
+      prev.includes(service) 
+        ? prev.filter(s => s !== service)
+        : [...prev, service]
+    );
+  };
+
+  const handleProductsSubmit = () => {
+    if (productAnswers.length === 0) return;
+    setPhase('completed');
   };
 
   const correctAnswers = answers.filter((answer, index) => answer === questions[index].correct).length;
@@ -110,6 +124,91 @@ export default function TesteCVC() {
   // Get user data from localStorage
   const validatedCPFData = JSON.parse(localStorage.getItem('validatedCPFData') || '{}');
   const userFirstName = validatedCPFData.nome ? validatedCPFData.nome.split(' ')[0] : 'Candidato';
+
+  if (phase === 'products') {
+    const serviceOptions = [
+      'Passagens aéreas',
+      'Hospedagem', 
+      'Seguro viagem',
+      'Cruzeiros',
+      'Pacotes rodoviários e aéreos',
+      'Aluguel de carros',
+      'Ingressos para parques'
+    ];
+
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Breadcrumb />
+        <div className="max-w-4xl mx-auto px-4 py-12 pt-[0px] pb-[0px]">
+          <div className="text-center pt-[0px] pb-[0px] mt-[10px] mb-[10px]">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mb-4">
+              <Package className="h-8 w-8 text-cvc-blue" />
+            </div>
+            <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Fase 3 - Conhecimentos de Produtos CVC</h1>
+            <p className="text-cvc-dark-blue text-[14px]">Demonstre seus conhecimentos sobre os serviços da CVC</p>
+          </div>
+
+          <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
+            <div className="mb-6">
+              <h3 className="font-bold text-cvc-blue text-lg mb-4">
+                8. Quais dos serviços abaixo podem ser vendidos por uma agência CVC?
+              </h3>
+              <p className="text-cvc-dark-blue text-sm mb-6 bg-cvc-yellow/10 p-4 rounded-lg">
+                Assinale todos que se aplicam
+              </p>
+              
+              <div className="space-y-3">
+                {serviceOptions.map((service, index) => (
+                  <label
+                    key={index}
+                    className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 ${
+                      productAnswers.includes(service)
+                        ? 'border-cvc-blue bg-cvc-yellow/10'
+                        : 'border-gray-200 hover:border-cvc-blue/50 hover:bg-gray-50'
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={productAnswers.includes(service)}
+                      onChange={() => handleProductToggle(service)}
+                      className="sr-only"
+                    />
+                    <div className={`w-5 h-5 rounded border-2 flex items-center justify-center mr-3 ${
+                      productAnswers.includes(service)
+                        ? 'bg-cvc-blue border-cvc-blue'
+                        : 'border-gray-300'
+                    }`}>
+                      {productAnswers.includes(service) && (
+                        <CheckCircle className="h-3 w-3 text-white" />
+                      )}
+                    </div>
+                    <span className={`font-medium ${
+                      productAnswers.includes(service) ? 'text-cvc-blue' : 'text-gray-700'
+                    }`}>
+                      {service}
+                    </span>
+                  </label>
+                ))}
+              </div>
+              
+              <div className="mt-4 text-sm text-gray-600">
+                {productAnswers.length} de {serviceOptions.length} serviços selecionados
+              </div>
+            </div>
+
+            <Button
+              onClick={handleProductsSubmit}
+              disabled={productAnswers.length === 0}
+              className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50"
+            >
+              Finalizar Teste
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (phase === 'completed') {
     return (
@@ -127,7 +226,7 @@ export default function TesteCVC() {
           </div>
 
           <div className="bg-white border border-cvc-blue/20 rounded-lg p-8 text-center">
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
               <div className="bg-cvc-yellow/10 p-6 rounded-lg">
                 <h3 className="font-bold text-cvc-blue mb-2">Fase 1 - Conhecimentos Gerais</h3>
                 <div className="text-2xl font-bold text-cvc-blue">{score}%</div>
@@ -138,12 +237,17 @@ export default function TesteCVC() {
                 <div className="text-2xl font-bold text-green-600">✓</div>
                 <p className="text-sm text-cvc-dark-blue">Aprovado</p>
               </div>
+              <div className="bg-cvc-blue/10 p-6 rounded-lg">
+                <h3 className="font-bold text-cvc-blue mb-2">Fase 3 - Produtos CVC</h3>
+                <div className="text-2xl font-bold text-cvc-blue">{productAnswers.length}/7</div>
+                <p className="text-sm text-cvc-dark-blue">Aprovado</p>
+              </div>
             </div>
 
             <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
               <h3 className="font-semibold text-cvc-blue mb-2">Resultado Final</h3>
               <p className="text-cvc-dark-blue">
-                Você demonstrou conhecimento adequado sobre turismo e habilidades práticas de atendimento.
+                Você demonstrou conhecimento adequado sobre turismo, habilidades práticas de atendimento e conhecimento dos produtos CVC.
                 Está qualificado para prosseguir com o cadastro bancário.
               </p>
             </div>
