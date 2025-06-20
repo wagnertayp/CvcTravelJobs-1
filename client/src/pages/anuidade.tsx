@@ -403,7 +403,7 @@ export default function Anuidade() {
                       </div>
                       <div className="p-3 bg-orange-100 rounded-lg border border-orange-300">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-orange-700 font-semibold">Total a Pagar:</span>
+                          <span className="text-sm text-orange-700 font-semibold">Total a pagar:</span>
                           <span className="text-lg font-bold text-orange-800">R$ 56,18</span>
                         </div>
                       </div>
