@@ -328,37 +328,22 @@ export default function ContaBancaria() {
           </div>
         </div>
       </div>
-      {/* Professional Loading Screen */}
+      {/* Progressive Checklist Loading Screen */}
       {isNavigationLoading && (
-        <div className="fixed inset-0 bg-cvc-blue flex items-center justify-center z-50">
-          <div className="text-center">
-            {/* CVC Logo Container */}
-            <div className="mb-8">
-              <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <img 
-                  src="https://i.postimg.cc/zvkTvTjZ/d2edd98a-82c3-4ca6-a4fc-328fe352a2a0-removalai-preview.png" 
-                  alt="CVC Logo" 
-                  className="h-20 w-auto"
-                />
-              </div>
-              
-              {/* Phase Title */}
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Concluindo Fase</h2>
-                <p className="text-cvc-yellow font-medium text-lg">{loadingPhase}</p>
-              </div>
-              
-              {/* Loading Animation */}
-              <div className="flex items-center justify-center gap-1 mb-4">
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-              </div>
-              
-              <p className="text-white text-sm">Aguarde um momento...</p>
-            </div>
-          </div>
-        </div>
+        <ProgressiveChecklistLoader 
+          title="Preparando Sistema de Comissões"
+          steps={[
+            "Verificando dados bancários",
+            "Conectando com sistema de pagamentos", 
+            "Configurando recebimento de comissões",
+            "Ativando dashboard de vendas",
+            "Preparando área de benefícios"
+          ]}
+          onComplete={() => {
+            setIsNavigationLoading(false);
+            setLocation('/comissoes');
+          }}
+        />
       )}
       {/* Confirmation Modal */}
       {showConfirmationModal && (
