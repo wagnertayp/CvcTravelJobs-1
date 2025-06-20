@@ -165,6 +165,8 @@ export default function Beneficios() {
     e.preventDefault();
     setAddressConfirmed(true);
     setShowEquipmentForm(false);
+    // Proceed directly to next phase
+    setLocation("/sistema-de-vendas");
   };
 
   const handleSignature = () => {
@@ -924,7 +926,7 @@ export default function Beneficios() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Confirmar Endereço
+                    Confirmar e Prosseguir
                   </Button>
                 </div>
               </form>
