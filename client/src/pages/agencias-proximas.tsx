@@ -88,9 +88,15 @@ export default function AgenciasProximas() {
             <MapPin className="h-8 w-8 text-cvc-blue" />
           </div>
           <h1 className="font-bold text-cvc-blue mb-3 text-[26px]">Agências CVC Próximas</h1>
-          <p className="text-lg text-cvc-dark-blue font-medium">
+          <p className="text-lg text-cvc-dark-blue font-medium mb-4">
             Encontre sua equipe de trabalho em {userCity}/{userState}
           </p>
+          
+          <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 rounded-lg max-w-2xl mx-auto">
+            <p className="text-white text-sm font-medium">
+              <strong>100% Home Office</strong> • Segunda a Sexta • Horários Flexíveis
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">

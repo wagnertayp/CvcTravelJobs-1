@@ -613,6 +613,11 @@ Changelog:
   * Implemented CVC-branded design with phase cards showing General Tourism, Practical Service, and CVC Products
   * Enhanced navigation flow from region validation to test information before actual test execution
   * Added informative sections about test duration, approval criteria, and post-test progression
+- June 20, 2025. Enhanced agency selection page with work arrangement clarity:
+  * Added prominent home office highlight box below page title
+  * Created CVC-branded notice emphasizing 100% remote work with flexible hours
+  * Clarified work schedule as Monday to Friday with flexible timing
+  * Applied consistent project styling with CVC blue background and yellow border
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
