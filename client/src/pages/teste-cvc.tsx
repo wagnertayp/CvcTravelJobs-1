@@ -414,7 +414,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
             <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[-33px] mb-[-33px]">
               <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
             </div>
-            <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Primeira fase concluída!</h1>
+            <h1 className="font-bold text-cvc-blue text-[24px] pt-[0px] pb-[0px] mt-[4px] mb-[4px]">Primeira fase concluída!</h1>
             <p className="text-cvc-dark-blue text-[16px] mt-[15px] mb-[15px] pt-[0px] pb-[0px]">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
             
             <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
