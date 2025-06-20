@@ -101,9 +101,6 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                     {isCompleted && (
                       <span className="text-xs text-green-300 font-medium">✓ Concluído</span>
                     )}
-                    {isActive && (
-                      <span className="text-xs text-cvc-yellow font-medium">⟳ Carregando...</span>
-                    )}
                     {isPending && (
                       <span className="text-xs text-white/50 font-medium">⋯ Aguardando</span>
                     )}

@@ -497,6 +497,7 @@ Changelog:
   * Replaced blinking effect with spinning ring contour around numbers
   * Numbers remain static while white border spins for loading indication
   * Removed animate-pulse from text and status indicators for cleaner presentation
+  * Removed "Carregando..." status text for cleaner interface
   * Maintained 6-second sequential loading per step with visual feedback
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
