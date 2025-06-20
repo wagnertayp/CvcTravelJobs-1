@@ -244,16 +244,31 @@ export default function TesteCVC() {
             </div>
 
             <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
-              <h3 className="font-semibold text-cvc-blue mb-2">Resultado Final</h3>
-              <p className="text-cvc-dark-blue ml-[-37px] mr-[-37px]">
+              <h3 className="font-semibold text-cvc-blue mb-3">Resultado Final</h3>
+              <p className="text-cvc-dark-blue mb-4">
                 Você demonstrou conhecimento adequado sobre turismo, habilidades práticas de atendimento e conhecimento dos produtos CVC.
-                Está qualificado para prosseguir com o cadastro bancário.
+                Sua aprovação confirma que você está preparado para atuar como Agente de Viagens CVC.
               </p>
+              
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
+                <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Seleção de Agência</h4>
+                <ul className="text-sm text-cvc-dark-blue space-y-1">
+                  <li>• Visualizar agências CVC próximas à sua região</li>
+                  <li>• Conhecer sua futura equipe de trabalho</li>
+                  <li>• Ver estimativas de comissão por agência</li>
+                  <li>• Escolher onde você trabalhará em home office</li>
+                </ul>
+              </div>
+              
+              <div className="text-center text-sm text-gray-600">
+                <p>Teste de Conhecimentos Concluído</p>
+                <p>Seleção de Agência → Dados Bancários → Benefícios</p>
+              </div>
             </div>
 
             <Button
               onClick={() => setLocation('/agencias-proximas')}
-              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue text-center"
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
             >Buscar Agências CVC Próximas</Button>
           </div>
         </div>
