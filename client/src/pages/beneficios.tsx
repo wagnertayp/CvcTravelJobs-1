@@ -616,12 +616,33 @@ export default function Beneficios() {
               </div>
             </div>
             
-            <div className="bg-cvc-yellow bg-opacity-20 p-4 rounded-lg border border-cvc-yellow mb-6">
-              <div className="flex items-center gap-3">
-                <CheckCircle className="h-5 w-5 text-cvc-blue" />
-                <div className="flex-1">
-                  <h4 className="font-medium text-cvc-blue">Kit Gratuito - Brasília/DF</h4>
-                  <p className="text-sm text-cvc-blue">Entrega gratuita na sua região</p>
+            <div className="bg-gradient-to-r from-cvc-yellow/20 to-cvc-blue/10 p-5 rounded-xl border-2 border-cvc-yellow/50 mb-6 shadow-lg">
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-cvc-yellow rounded-full mb-3">
+                  <CheckCircle className="h-7 w-7 text-cvc-blue" />
+                </div>
+                <h4 className="text-lg font-bold text-cvc-blue mb-2">Kit Profissional Gratuito</h4>
+                <p className="text-sm text-cvc-dark-blue font-medium">Entrega gratuita em Brasília/DF</p>
+              </div>
+              
+              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/40">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-cvc-blue rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-xs font-bold">!</span>
+                  </div>
+                  <div className="flex-1">
+                    <h5 className="font-semibold text-cvc-blue mb-2">Próximos Passos:</h5>
+                    <ul className="text-sm text-cvc-dark-blue space-y-1">
+                      <li>• Assinar termo de responsabilidade dos equipamentos</li>
+                      <li>• Confirmar endereço de entrega</li>
+                      <li>• Receber kit em até 3 dias úteis</li>
+                    </ul>
+                    <div className="mt-3 p-2 bg-cvc-blue/10 rounded-md">
+                      <p className="text-xs text-cvc-blue font-medium">
+                        ⚡ Continue abaixo para assinar o termo e finalizar
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -639,6 +639,12 @@ Changelog:
   * Updated status badge to use green background, border, and text with CheckCircle icon
   * Modified information box to show successful validation message
   * Applied consistent green color scheme for validated token status throughout interface
+- June 20, 2025. Enhanced kit gratuito section with improved layout and next steps guidance:
+  * Redesigned kit notification with gradient background and premium visual elements
+  * Added centered layout with prominent CheckCircle icon and enhanced typography
+  * Implemented next steps information box with clear action items
+  * Added guidance about signing responsibility terms and address confirmation
+  * Enhanced visual hierarchy with backdrop blur effects and layered design
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
