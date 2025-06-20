@@ -22,7 +22,7 @@ export default function Breadcrumb() {
           <ChevronRight className="h-6 w-6 text-white" />
           <div>
             <h1 className="text-white font-semibold text-[18px]">{currentPage}</h1>
-            <p className="text-white/80 text-sm">CVC Corp</p>
+            <p className="text-white/80 text-[13px]">CVC Agentes</p>
           </div>
         </nav>
       </div>
