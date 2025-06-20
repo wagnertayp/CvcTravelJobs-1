@@ -143,7 +143,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
         <Breadcrumb />
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[-9px] mb-[-9px]">
               <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
             </div>
             <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Avaliação da IA CVC</h1>
