@@ -339,9 +339,7 @@ export default function Anuidade() {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-cvc-blue mb-3">
-            Kit Profissional CVC
-          </h1>
+          <h1 className="text-2xl font-bold text-cvc-blue mb-3">Sistema Disponível</h1>
           <p className="text-gray-600 text-sm">
             Equipamentos e cartões personalizados para agentes credenciados
           </p>
