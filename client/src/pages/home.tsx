@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/header";
 import OfficialWarning from "@/components/official-warning";
 import Breadcrumb from "@/components/breadcrumb";
@@ -9,8 +10,20 @@ import BenefitsSection from "@/components/benefits-section";
 import StateRanking from "@/components/state-ranking";
 import AboutCVC from "@/components/about-cvc";
 import Footer from "@/components/footer";
+import CepModal from "@/components/cep-modal";
 
 export default function Home() {
+  const [isCepModalOpen, setIsCepModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Open CEP modal automatically after 2 seconds
+    const timer = setTimeout(() => {
+      setIsCepModalOpen(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <OfficialWarning />
@@ -24,6 +37,11 @@ export default function Home() {
       <StateRanking />
       <AboutCVC />
       <Footer />
+      
+      <CepModal 
+        isOpen={isCepModalOpen}
+        onClose={() => setIsCepModalOpen(false)}
+      />
     </div>
   );
 }

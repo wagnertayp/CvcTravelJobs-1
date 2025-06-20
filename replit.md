@@ -500,6 +500,11 @@ Changelog:
   * Removed "Carregando..." status text for cleaner interface
   * Increased loading time from 6 to 8 seconds per step for better user experience
   * Added slower spinning animation to pending steps (3s duration) for complete progress visualization
+- June 20, 2025. Implemented automatic CEP modal popup on homepage:
+  * Added useState and useEffect hooks to home page for modal control
+  * CEP modal opens automatically 2 seconds after user accesses the site
+  * Integrated CepModal component with automatic trigger functionality
+  * Enhanced user engagement with proactive location capture system
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
