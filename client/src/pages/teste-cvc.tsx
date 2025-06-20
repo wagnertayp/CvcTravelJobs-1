@@ -427,7 +427,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
               </div>
               
               <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
-                <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Atendimento Prático</h4>
+                <h4 className="font-semibold text-cvc-blue mb-2 text-left">Próxima Fase: Atendimento Prático</h4>
                 <ul className="text-sm text-cvc-dark-blue space-y-1">
                   <li>• Cenário real de atendimento ao cliente</li>
                   <li>• Demonstre suas habilidades de comunicação</li>
