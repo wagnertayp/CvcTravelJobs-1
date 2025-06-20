@@ -277,7 +277,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
         <Header />
         <Breadcrumb />
         <div className="max-w-4xl mx-auto px-4 py-12">
-          <div className="text-center mb-8">
+          <div className="text-center mt-[20px] mb-[20px] pt-[-8px] pb-[-8px]">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mt-[8px] mb-[8px]">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
