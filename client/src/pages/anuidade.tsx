@@ -390,7 +390,7 @@ export default function Anuidade() {
                       <Package className="h-4 w-4 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-orange-800 text-sm mb-3">Pendências para Finalização</h4>
+                      <h4 className="font-semibold text-orange-800 text-sm mb-3">Pendências para finalização</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                         <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
                           <div className="flex justify-between items-start mb-1">
