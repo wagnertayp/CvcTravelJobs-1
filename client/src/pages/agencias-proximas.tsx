@@ -93,7 +93,7 @@ export default function AgenciasProximas() {
         </div>
 
         <div className="text-center mb-8">
-          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências CVC em São Paulo</h1>
+          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências CVC Disponíveis</h1>
           <p className="text-cvc-dark-blue text-[14px]">Selecione uma agência para integrar sua equipe em home office</p>
         </div>
 
