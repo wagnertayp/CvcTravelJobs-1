@@ -176,20 +176,16 @@ export default function TesteCVC() {
           </div>
 
           <div className="bg-white border border-cvc-blue/20 rounded-lg p-8">
-            <div className="bg-gradient-to-r from-cvc-blue to-cvc-dark-blue p-8 rounded-xl mb-8 shadow-lg border border-cvc-yellow/30">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-cvc-yellow rounded-full flex items-center justify-center">
-                  <User className="h-6 w-6 text-cvc-blue" />
+            <div className="bg-cvc-yellow/10 border-l-4 border-cvc-blue p-6 rounded-lg mb-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 bg-cvc-blue rounded-full flex items-center justify-center">
+                  <User className="h-4 w-4 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Cenário de Atendimento</h3>
+                <h3 className="font-bold text-cvc-blue text-lg">Cenário de Atendimento</h3>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <p className="text-white leading-relaxed font-medium text-lg">
-                  Uma família de 4 pessoas chega à sua agência buscando um pacote para o Nordeste. 
-                  Eles querem algo "pé na areia", com piscina, café da manhã incluso, área infantil 
-                  e saída de São Paulo.
-                </p>
-              </div>
+              <p className="text-cvc-dark-blue font-medium">
+                Família de 4 pessoas busca pacote para o Nordeste: "pé na areia", piscina, café da manhã, área infantil, saída de São Paulo.
+              </p>
             </div>
 
             <div className="mb-6">

@@ -539,6 +539,12 @@ Changelog:
   * Implemented backdrop blur effect with white overlay for text readability
   * Enhanced typography with larger text size and improved spacing
   * Added shadow effects and border styling for professional appearance
+- June 20, 2025. Simplified practical test scenario design for better readability:
+  * Replaced gradient background with clean CVC yellow/10 background
+  * Added left border in CVC blue for visual emphasis
+  * Condensed scenario text to single sentence format for clarity
+  * Fixed text visibility issues by using CVC dark blue instead of white text
+  * Reduced icon and padding sizes for more compact presentation
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
