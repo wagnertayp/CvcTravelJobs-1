@@ -69,6 +69,8 @@ export default function TesteCVC() {
   const [phase, setPhase] = useState<'quiz' | 'practical' | 'products' | 'completed'>('quiz');
   const [practicalAnswer, setPracticalAnswer] = useState('');
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [showPracticalResult, setShowPracticalResult] = useState(false);
+  const [practicalEvaluation, setPracticalEvaluation] = useState('');
   const [productAnswers, setProductAnswers] = useState<string[]>([]);
 
   const handleAnswerSelect = (answerIndex: number) => {
@@ -95,10 +97,20 @@ export default function TesteCVC() {
     if (practicalAnswer.trim().length < 15) return;
     
     setIsEvaluating(true);
-    // Simulate real-time evaluation
+    
+    // Simulate AI evaluation with progressive feedback
     setTimeout(() => {
+      const evaluation = `A IA da CVC analisou sua resposta e identificou pontos positivos em sua abordagem de atendimento. 
+      
+Sua resposta: "${practicalAnswer}"
+
+Avaliação: Você demonstrou compreensão adequada sobre a importância de fazer perguntas específicas para entender as necessidades do cliente. Pontos como orçamento, preferências de hospedagem e datas são fundamentais para um bom atendimento.
+
+Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CVC.`;
+      
+      setPracticalEvaluation(evaluation);
       setIsEvaluating(false);
-      setPhase('products');
+      setShowPracticalResult(true);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }, 4000);
   };
@@ -123,6 +135,59 @@ export default function TesteCVC() {
   // Get user data from localStorage
   const validatedCPFData = JSON.parse(localStorage.getItem('validatedCPFData') || '{}');
   const userFirstName = validatedCPFData.nome ? validatedCPFData.nome.split(' ')[0] : 'Candidato';
+
+  if (showPracticalResult) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Breadcrumb />
+        
+        <div className="max-w-5xl mx-auto px-4 py-12">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+              <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
+            </div>
+            <h1 className="text-3xl font-bold text-cvc-blue mb-3">Avaliação da IA CVC</h1>
+            <p className="text-cvc-dark-blue text-lg mb-6">Análise completa do seu atendimento prático</p>
+            
+            <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-3xl mx-auto">
+              <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 px-6 sm:px-8 rounded-lg mb-4">
+                <h3 className="font-semibold text-cvc-yellow mb-3">Resultado da Análise</h3>
+                <div className="text-white text-sm leading-relaxed whitespace-pre-line">
+                  {practicalEvaluation}
+                </div>
+              </div>
+              
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
+                <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Conhecimentos de Produtos CVC</h4>
+                <ul className="text-sm text-cvc-dark-blue space-y-1">
+                  <li>• Demonstre conhecimento sobre serviços da CVC</li>
+                  <li>• Identifique produtos e soluções oferecidas</li>
+                  <li>• Mostre familiaridade com o portfólio da empresa</li>
+                  <li>• Complete a avaliação final de conhecimentos</li>
+                </ul>
+              </div>
+              
+              <div className="text-center text-sm text-gray-600">
+                <p>Conhecimentos Gerais ✓ → Atendimento Prático ✓ → Produtos CVC</p>
+              </div>
+            </div>
+
+            <Button
+              onClick={() => {
+                setShowPracticalResult(false);
+                setPhase('products');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+              }}
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
+            >
+              Continuar para Produtos CVC
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (phase === 'products') {
     const serviceOptions = [
