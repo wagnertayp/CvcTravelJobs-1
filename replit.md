@@ -606,6 +606,13 @@ Changelog:
   * Implemented manual progression control - removed automatic timer for better user experience
   * Added step-by-step preview showing complete testing workflow progression
   * Enhanced button styling following project standards with proper CVC blue theme
+- June 20, 2025. Created comprehensive test information page with enhanced region summary:
+  * Updated region page to show personalized next phases information using user CPF data
+  * Created new /iniciarteste page with detailed test overview and three-phase explanation
+  * Added comprehensive test information including timing, criteria, and progression details
+  * Implemented CVC-branded design with phase cards showing General Tourism, Practical Service, and CVC Products
+  * Enhanced navigation flow from region validation to test information before actual test execution
+  * Added informative sections about test duration, approval criteria, and post-test progression
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

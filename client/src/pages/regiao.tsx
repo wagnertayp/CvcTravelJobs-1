@@ -281,17 +281,26 @@ export default function Regiao() {
               </div>
             </div>
 
-            <div className="mt-4 p-3 bg-cvc-yellow/10 border border-cvc-yellow/30 rounded-lg">
-              <div className="flex items-center gap-2 mb-1">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <span className="font-medium text-cvc-blue text-sm">Dados Corretamente Adicionados</span>
+            <div className="mt-4 p-4 bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <CheckCircle className="h-4 w-4 text-cvc-blue" />
+                <span className="font-medium text-cvc-blue text-sm">Cadastro Validado - {cpfData?.nome}</span>
               </div>
-              <p className="text-xs text-cvc-dark-blue">Informações validadas com sucesso. Continue para cadastrar seu recebimento.</p>
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-3 mb-3">
+                <h4 className="font-semibold text-cvc-blue mb-2 text-sm">Próximas Fases do Processo:</h4>
+                <ul className="text-xs text-cvc-dark-blue space-y-1">
+                  <li>• Teste de Conhecimentos CVC (3 fases)</li>
+                  <li>• Seleção de Agência e Equipe</li>
+                  <li>• Configuração de Dados Bancários</li>
+                  <li>• Ativação de Benefícios e Sistema</li>
+                </ul>
+              </div>
+              <p className="text-xs text-gray-600">Suas informações foram validadas. Prossiga para iniciar o teste de conhecimentos.</p>
             </div>
 
             <div className="mt-6">
               <Button
-                onClick={() => showLoadingAndNavigate('Preparando teste de conhecimentos...', '/teste-cvc')}
+                onClick={() => showLoadingAndNavigate('Preparando informações do teste...', '/iniciarteste')}
                 className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
               >Prosseguir</Button>
             </div>

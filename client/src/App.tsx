@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import Home from "@/pages/home";
 import Regiao from "@/pages/regiao";
+import IniciarTeste from "@/pages/iniciarteste";
 import TesteCVC from "@/pages/teste-cvc";
 import AgenciasProximas from "@/pages/agencias-proximas";
 import ContaBancaria from "@/pages/conta-bancaria";
@@ -44,6 +45,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/regiao" component={Regiao} />
+        <Route path="/iniciarteste" component={IniciarTeste} />
         <Route path="/teste-cvc" component={TesteCVC} />
         <Route path="/agencias-proximas" component={AgenciasProximas} />
         <Route path="/conta-bancaria" component={ContaBancaria} />
