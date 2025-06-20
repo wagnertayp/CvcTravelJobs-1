@@ -16,7 +16,7 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
       const timer = setTimeout(() => {
         setCompletedSteps(prev => [...prev, currentStep]);
         setCurrentStep(prev => prev + 1);
-      }, 2000); // 2 seconds per step
+      }, 7000); // 7 seconds per step
 
       return () => clearTimeout(timer);
     } else if (currentStep === steps.length) {
@@ -53,32 +53,58 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                 className="flex items-center gap-3 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20"
               >
                 <div className={`
-                  w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold
-                  ${isCompleted ? 'bg-cvc-yellow text-cvc-blue' : 
-                    isActive ? 'bg-cvc-yellow text-cvc-blue animate-pulse' : 
+                  relative w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-500
+                  ${isCompleted ? 'bg-cvc-yellow text-cvc-blue transform scale-110' : 
+                    isActive ? 'bg-cvc-yellow text-cvc-blue' : 
                     'bg-white/20 text-white/60'}
                 `}>
                   {isCompleted ? (
-                    <Check className="h-4 w-4" />
+                    <Check className="h-4 w-4 animate-bounce" />
                   ) : (
                     index + 1
+                  )}
+                  
+                  {/* Loading ring animation for active step */}
+                  {isActive && (
+                    <div className="absolute inset-0 rounded-full border-2 border-cvc-yellow/30 border-t-cvc-yellow animate-spin"></div>
                   )}
                 </div>
                 
                 <div className="flex-1">
                   <p className={`
-                    text-sm font-medium
-                    ${isCompleted || isActive ? 'text-white' : 'text-white/60'}
+                    text-sm font-medium transition-all duration-300
+                    ${isCompleted ? 'text-white' : 
+                      isActive ? 'text-white animate-pulse' : 
+                      'text-white/60'}
                   `}>
                     {step}
                   </p>
+                  
+                  {/* Progress dots under active step */}
+                  {isActive && (
+                    <div className="flex gap-1 mt-1">
+                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse"></div>
+                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+                    </div>
+                  )}
                 </div>
 
+                {/* Enhanced loading animation */}
                 {isActive && (
                   <div className="flex gap-1">
                     <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce"></div>
-                    <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.15s'}}></div>
+                    <div className="w-1.5 h-1.5 bg-cvc-yellow rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
+                  </div>
+                )}
+                
+                {/* Completion effect */}
+                {isCompleted && (
+                  <div className="w-4 h-4 bg-green-500/80 rounded-full flex items-center justify-center">
+                    <Check className="h-2.5 w-2.5 text-white" />
                   </div>
                 )}
               </div>
