@@ -645,6 +645,11 @@ Changelog:
   * Implemented next steps information box with clear action items
   * Added guidance about signing responsibility terms and address confirmation
   * Enhanced visual hierarchy with backdrop blur effects and layered design
+- June 20, 2025. Simplified payment flow in sistema-de-vendas page:
+  * Removed complex payment notice section with multiple buttons
+  * Replaced with single "Calcular Custos e Prosseguir" button using CVC blue colors
+  * Streamlined user flow to proceed to cost calculation in next phase
+  * Applied consistent project color scheme (CVC blue background, white text)
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

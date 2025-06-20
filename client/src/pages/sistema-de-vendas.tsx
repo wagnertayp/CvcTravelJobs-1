@@ -572,57 +572,18 @@ export default function SistemaDeVendas() {
                         </div>
                       </div>
 
-                      {/* Kit Delivery */}
-                      <div className="bg-cvc-yellow/10 border border-cvc-yellow/30 rounded-lg p-4">
-                        {/* Centered SEDEX Logo */}
-                        <div className="flex justify-center mb-3">
-                          <img 
-                            src="https://i.postimg.cc/MpPzG8DX/f2320c48-4fb9-453b-9a41-9660c6e786f3-removalai-preview.png" 
-                            alt="SEDEX"
-                            className="h-8 w-auto object-contain"
-                          />
-                        </div>
-                        
-                        <p className="text-sm text-cvc-dark-blue mb-3 text-center">
-                          Seu kit profissional e cartão personalizado CVC serão enviados para o endereço cadastrado.
-                        </p>
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="w-4 h-4 bg-cvc-blue rounded-full flex items-center justify-center flex-shrink-0">
-                            <Calendar className="h-2.5 w-2.5 text-white" />
-                          </div>
-                          <div className="text-sm text-cvc-dark-blue font-medium">
-                            Previsão de entrega: <strong>{getDeliveryDate()}</strong>
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
 
-                  {/* Payment Notice */}
-                  <div className="mb-6 p-4 bg-cvc-blue border-l-4 border-cvc-yellow rounded-lg">
-                    <h4 className="text-lg font-semibold text-white mb-3">
-                      Ativação do Sistema de Vendas
-                    </h4>
-                    <p className="text-white/90 text-sm mb-4 leading-relaxed">
-                      Para acessar o sistema de vendas e iniciar imediatamente suas atividades como agente CVC, 
-                      é necessário realizar o pagamento da anuidade. Este pagamento garante o acesso completo 
-                      ao portal de vendas e todas as ferramentas profissionais.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                      <Button 
-                        onClick={proceedToReady}
-                        className="bg-cvc-yellow hover:bg-cvc-yellow/90 text-cvc-blue font-semibold px-6 py-3"
-                      >
-                        Prosseguir com Pagamento
-                      </Button>
-                      <Button 
-                        onClick={() => window.location.href = '/'}
-                        variant="outline"
-                        className="border-white text-white hover:bg-white hover:text-cvc-blue font-semibold px-6 py-3"
-                      >
-                        Desistir da Vaga
-                      </Button>
-                    </div>
+                  {/* Continue Button */}
+                  <div className="mb-6 text-center">
+                    <Button 
+                      onClick={proceedToReady}
+                      className="bg-cvc-blue hover:bg-cvc-blue/90 text-white font-semibold px-8 py-3 text-lg"
+                    >
+                      Calcular Custos e Prosseguir
+                    </Button>
                   </div>
                 </div>
               )}
