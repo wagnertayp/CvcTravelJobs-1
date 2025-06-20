@@ -22,7 +22,7 @@ export default function IniciarTeste() {
     <div className="min-h-screen bg-white">
       <Header />
       <Breadcrumb />
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-12 pt-[5px] pb-[5px] mt-[9px] mb-[9px]">
         <div className="text-center pt-[0px] pb-[0px] mt-[-1px] mb-[-1px]">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[6px] mb-[6px]">
             <BookOpen className="h-8 w-8 text-cvc-blue" />
