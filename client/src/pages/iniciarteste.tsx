@@ -31,7 +31,7 @@ export default function IniciarTeste() {
           <p className="text-cvc-dark-blue text-lg">Olá, {userFirstName}! Prepare-se para demonstrar seus conhecimentos</p>
         </div>
 
-        <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6">
+        <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 pt-[48px] pb-[48px] mt-[23px] mb-[23px]">
           <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 rounded-lg mb-6">
             <h3 className="font-semibold text-cvc-yellow mb-2">Sobre o Teste de Avaliação</h3>
             <p className="text-white text-sm leading-relaxed">
