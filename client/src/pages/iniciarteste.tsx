@@ -27,7 +27,7 @@ export default function IniciarTeste() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[6px] mb-[6px]">
             <BookOpen className="h-8 w-8 text-cvc-blue" />
           </div>
-          <h1 className="text-3xl font-bold text-cvc-blue mb-2">Teste de Conhecimentos CVC</h1>
+          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Teste de Conhecimentos CVC</h1>
           <p className="text-cvc-dark-blue text-lg">Olá, {userFirstName}! Prepare-se para demonstrar seus conhecimentos</p>
         </div>
 
