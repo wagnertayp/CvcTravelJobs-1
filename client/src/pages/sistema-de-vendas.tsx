@@ -581,9 +581,7 @@ export default function SistemaDeVendas() {
                     <Button 
                       onClick={proceedToReady}
                       className="bg-cvc-blue hover:bg-cvc-blue/90 text-white font-semibold px-8 py-3 text-lg"
-                    >
-                      Calcular Custos e Prosseguir
-                    </Button>
+                    >Prosseguir</Button>
                   </div>
                 </div>
               )}
