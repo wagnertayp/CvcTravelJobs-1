@@ -409,13 +409,12 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
       <div className="min-h-screen bg-white">
         <Header />
         <Breadcrumb />
-        
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[-33px] mb-[-33px]">
               <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
             </div>
-            <h1 className="text-3xl font-bold text-cvc-blue mb-3">Primeira Fase Concluída!</h1>
+            <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Primeira fase concluída!</h1>
             <p className="text-cvc-dark-blue text-lg mb-6">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
             
             <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
