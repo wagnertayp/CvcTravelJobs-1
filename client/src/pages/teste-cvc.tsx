@@ -361,7 +361,7 @@ export default function TesteCVC() {
             <BookOpen className="h-8 w-8 text-cvc-blue" />
           </div>
           <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Teste de Conhecimentos CVC</h1>
-          <p className="text-cvc-dark-blue font-medium text-[16px]">Conhecimentos Gerais de Turismo</p>
+          <p className="text-cvc-dark-blue font-medium text-[14px]">Conhecimentos Gerais de Turismo</p>
         </div>
 
         {/* Progress Bar */}
