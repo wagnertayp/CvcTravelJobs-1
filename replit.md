@@ -483,6 +483,11 @@ Changelog:
   * Streamlined interface to focus on PIX payment exclusively
   * Integrated dynamic city name from CEP validation in queue pressure message
   * Reduced warning message size with compact design and removed emoji from title
+- June 20, 2025. Added payment confirmation notice to sales system page:
+  * Created prominent blue notice with CVC brand colors explaining payment requirement
+  * Added two-button choice: "Prosseguir com Pagamento" and "Desistir da Vaga"
+  * Positioned before final configuration step to ensure user commitment
+  * Integrated seamless flow from system configuration to payment process
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

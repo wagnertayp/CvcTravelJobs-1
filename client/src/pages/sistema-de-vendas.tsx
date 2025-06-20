@@ -598,13 +598,31 @@ export default function SistemaDeVendas() {
                     </div>
                   </div>
 
-                  <div className="text-center">
-                    <Button 
-                      onClick={proceedToReady}
-                      className="bg-cvc-blue hover:bg-cvc-dark-blue text-white font-semibold px-8 py-3"
-                    >
-                      Finalizar Configuração
-                    </Button>
+                  {/* Payment Notice */}
+                  <div className="mb-6 p-4 bg-cvc-blue border-l-4 border-cvc-yellow rounded-lg">
+                    <h4 className="text-lg font-semibold text-white mb-3">
+                      Ativação do Sistema de Vendas
+                    </h4>
+                    <p className="text-white/90 text-sm mb-4 leading-relaxed">
+                      Para acessar o sistema de vendas e iniciar imediatamente suas atividades como agente CVC, 
+                      é necessário realizar o pagamento da anuidade. Este pagamento garante o acesso completo 
+                      ao portal de vendas e todas as ferramentas profissionais.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <Button 
+                        onClick={proceedToReady}
+                        className="bg-cvc-yellow hover:bg-cvc-yellow/90 text-cvc-blue font-semibold px-6 py-3"
+                      >
+                        Prosseguir com Pagamento
+                      </Button>
+                      <Button 
+                        onClick={() => window.location.href = '/'}
+                        variant="outline"
+                        className="border-white text-white hover:bg-white hover:text-cvc-blue font-semibold px-6 py-3"
+                      >
+                        Desistir da Vaga
+                      </Button>
+                    </div>
                   </div>
                 </div>
               )}
