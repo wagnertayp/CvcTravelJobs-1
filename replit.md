@@ -533,6 +533,12 @@ Changelog:
   * Reduced minimum character requirement from 50 to 15 characters
   * Updated placeholder text and validation messages accordingly
   * Maintained evaluation logic and submission controls
+- June 20, 2025. Enhanced practical test scenario presentation with premium design:
+  * Applied gradient background using CVC blue color scheme for scenario box
+  * Added User icon with CVC yellow circular background for visual impact
+  * Implemented backdrop blur effect with white overlay for text readability
+  * Enhanced typography with larger text size and improved spacing
+  * Added shadow effects and border styling for professional appearance
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
