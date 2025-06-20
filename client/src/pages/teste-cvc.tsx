@@ -244,8 +244,8 @@ export default function TesteCVC() {
             </div>
 
             <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
-              <h3 className="font-semibold text-cvc-blue mb-3">Resultado Final</h3>
-              <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 rounded-lg mb-4">
+              <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-6 px-8 sm:px-12 rounded-lg mb-4">
+                <h3 className="font-semibold text-cvc-yellow mb-3">Resultado Final</h3>
                 <p className="text-white text-sm font-medium leading-relaxed">
                   Você demonstrou conhecimento adequado sobre turismo, habilidades práticas de atendimento e conhecimento dos produtos CVC.
                   Sua aprovação confirma que você está preparado para atuar como Agente de Viagens CVC.
