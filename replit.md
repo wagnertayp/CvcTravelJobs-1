@@ -461,14 +461,14 @@ Changelog:
   * Created professional layout with chevron icon glow effect and drop shadows
   * Enhanced typography with refined spacing and "CVC Agentes" branding
   * Balanced clean aesthetics with sophisticated design elements for premium feel
-- June 19, 2025. Enhanced loader with comprehensive visual feedback system:
-  * Maintained breadcrumb-inspired design with CVC blue background and glass-morphism effects
-  * Extended timing to 7 seconds per step for adequate loading experience (35 seconds total)
-  * Enhanced visual effects: spinning border rings, scaling animations, and text pulsing
-  * Added multiple loading indicators: progress dots under active steps, bouncing side dots
-  * Implemented completion animations with green check marks and scale transforms
-  * Applied comprehensive transition effects for all step states (pending, active, completed)
-  * Balanced minimalist design with rich visual feedback for better user experience
+- June 19, 2025. Perfected sequential loading system with comprehensive visual feedback:
+  * Corrected timing to exactly 6 seconds per step for optimal loading experience (30 seconds total)
+  * Implemented true sequential loading where each option visibly loads individually
+  * Added distinct visual states: Aguardando, Carregando, Finalizando, Concluído with status text
+  * Enhanced each loading phase with spinning rings, progress dots, bouncing animations
+  * Applied color-coded backgrounds: green for completed, yellow for active, transparent for pending
+  * Maintained breadcrumb-inspired design with CVC brand colors throughout
+  * Ensured all loading elements (spinner, dots, text) animate during full 6-second duration
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

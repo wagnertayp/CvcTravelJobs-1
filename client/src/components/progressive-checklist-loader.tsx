@@ -10,19 +10,28 @@ interface ProgressiveChecklistLoaderProps {
 export default function ProgressiveChecklistLoader({ title, steps, onComplete }: ProgressiveChecklistLoaderProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (currentStep < steps.length) {
+      // Start loading animation for current step
+      setIsLoading(true);
+      
       const timer = setTimeout(() => {
         setCompletedSteps(prev => [...prev, currentStep]);
-        setCurrentStep(prev => prev + 1);
-      }, 7000); // 7 seconds per step
+        setIsLoading(false);
+        
+        // Small delay before moving to next step
+        setTimeout(() => {
+          setCurrentStep(prev => prev + 1);
+        }, 300);
+      }, 6000); // 6 seconds per step
 
       return () => clearTimeout(timer);
     } else if (currentStep === steps.length) {
       const finalTimer = setTimeout(() => {
         onComplete();
-      }, 500);
+      }, 800);
 
       return () => clearTimeout(finalTimer);
     }
@@ -40,22 +49,28 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
           <div className="w-16 h-0.5 bg-cvc-yellow/70 mx-auto rounded-full"></div>
         </div>
 
-        {/* Simple Progress Steps */}
+        {/* Sequential Loading Steps */}
         <div className="space-y-3">
           {steps.map((step, index) => {
             const isCompleted = completedSteps.includes(index);
-            const isActive = currentStep === index;
+            const isActive = currentStep === index && isLoading;
+            const isWaiting = currentStep === index && !isLoading;
             const isPending = index > currentStep;
 
             return (
               <div 
                 key={index} 
-                className="flex items-center gap-3 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20"
+                className={`
+                  flex items-center gap-3 p-3 rounded-lg backdrop-blur-sm border transition-all duration-500
+                  ${isCompleted ? 'bg-green-500/20 border-green-400/40' :
+                    isActive || isWaiting ? 'bg-cvc-yellow/20 border-cvc-yellow/40' :
+                    'bg-white/10 border-white/20'}
+                `}
               >
                 <div className={`
                   relative w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-500
-                  ${isCompleted ? 'bg-cvc-yellow text-cvc-blue transform scale-110' : 
-                    isActive ? 'bg-cvc-yellow text-cvc-blue' : 
+                  ${isCompleted ? 'bg-green-500 text-white transform scale-110' : 
+                    isActive || isWaiting ? 'bg-cvc-yellow text-cvc-blue' : 
                     'bg-white/20 text-white/60'}
                 `}>
                   {isCompleted ? (
@@ -73,21 +88,37 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                 <div className="flex-1">
                   <p className={`
                     text-sm font-medium transition-all duration-300
-                    ${isCompleted ? 'text-white' : 
-                      isActive ? 'text-white animate-pulse' : 
+                    ${isCompleted ? 'text-green-200' : 
+                      isActive || isWaiting ? 'text-white' : 
                       'text-white/60'}
                   `}>
                     {step}
                   </p>
                   
+                  {/* Status text */}
+                  <div className="mt-1">
+                    {isCompleted && (
+                      <span className="text-xs text-green-300 font-medium">✓ Concluído</span>
+                    )}
+                    {isActive && (
+                      <span className="text-xs text-cvc-yellow font-medium animate-pulse">⟳ Carregando...</span>
+                    )}
+                    {isWaiting && (
+                      <span className="text-xs text-cvc-yellow font-medium">⏳ Finalizando...</span>
+                    )}
+                    {isPending && (
+                      <span className="text-xs text-white/50 font-medium">⋯ Aguardando</span>
+                    )}
+                  </div>
+                  
                   {/* Progress dots under active step */}
                   {isActive && (
-                    <div className="flex gap-1 mt-1">
-                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse"></div>
-                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
-                      <div className="w-1 h-1 bg-cvc-yellow/60 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+                    <div className="flex gap-1 mt-2">
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse"></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                      <div className="w-1 h-1 bg-cvc-yellow rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
                     </div>
                   )}
                 </div>
@@ -103,7 +134,7 @@ export default function ProgressiveChecklistLoader({ title, steps, onComplete }:
                 
                 {/* Completion effect */}
                 {isCompleted && (
-                  <div className="w-4 h-4 bg-green-500/80 rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                     <Check className="h-2.5 w-2.5 text-white" />
                   </div>
                 )}
