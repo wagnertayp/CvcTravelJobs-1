@@ -454,13 +454,13 @@ Changelog:
   * Added "Quero ser Agente" button below About CVC image that opens the CEP modal for registration
   * Updated bank account confirmation modal to use CVC brand colors (yellow background, blue icons and text)
   * Added automatic client system explanation in commissions page highlighting no prospecting needed
-- June 19, 2025. Enhanced breadcrumb component with premium professional design:
-  * Applied CVC brand gradient background (blue to dark blue) with yellow accents
-  * Added interactive hover effects with smooth color transitions on Home button
-  * Implemented glass-morphism design with backdrop blur and rounded pill shapes
-  * Created visual hierarchy with current page highlighted in CVC yellow badge
-  * Added decorative animated elements and progress indicator line for premium feel
-  * Optimized responsive design hiding decorative elements on mobile devices
+- June 19, 2025. Redesigned breadcrumb component with clean, minimalist approach:
+  * Simplified design following user reference with solid CVC blue background
+  * Removed complex gradients, animations, and decorative elements for clean appearance
+  * Implemented simple chevron icon with current page title and CVC Corp subtitle
+  * Created professional layout similar to partner platform reference provided
+  * Optimized for readability with white text on blue background
+  * Focused on essential navigation information without visual distractions
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
