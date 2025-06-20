@@ -152,7 +152,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
             <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-3xl mx-auto">
               <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-4 px-6 sm:px-8 rounded-lg mb-4 ml-[-13px] mr-[-13px]">
                 <h3 className="font-semibold text-cvc-yellow mb-3">Resultado da Análise</h3>
-                <div className="text-white text-sm leading-relaxed whitespace-pre-line">
+                <div className="text-white text-sm leading-relaxed whitespace-pre-line ml-[-10px] mr-[-10px]">
                   {practicalEvaluation}
                 </div>
               </div>
