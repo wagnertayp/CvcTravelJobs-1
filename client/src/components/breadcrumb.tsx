@@ -21,7 +21,7 @@ export default function Breadcrumb() {
         <nav className="flex items-center gap-3">
           <ChevronRight className="h-6 w-6 text-white" />
           <div>
-            <h1 className="text-white text-xl font-semibold">{currentPage}</h1>
+            <h1 className="text-white font-semibold text-[18px]">{currentPage}</h1>
             <p className="text-white/80 text-sm">CVC Corp</p>
           </div>
         </nav>
