@@ -252,11 +252,9 @@ export default function TesteCVC() {
             </div>
 
             <Button
-              onClick={() => setLocation('/conta-bancaria')}
-              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue"
-            >
-              Prosseguir para Configuração Bancária
-            </Button>
+              onClick={() => setLocation('/agencias-proximas')}
+              className="bg-cvc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue text-center"
+            >Buscar Agências CVC Próximas</Button>
           </div>
         </div>
       </div>

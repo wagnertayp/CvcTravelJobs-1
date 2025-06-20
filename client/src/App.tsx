@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Home from "@/pages/home";
 import Regiao from "@/pages/regiao";
 import TesteCVC from "@/pages/teste-cvc";
+import AgenciasProximas from "@/pages/agencias-proximas";
 import ContaBancaria from "@/pages/conta-bancaria";
 import Comissoes from "@/pages/comissoes";
 import Beneficios from "@/pages/beneficios";
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/regiao" component={Regiao} />
         <Route path="/teste-cvc" component={TesteCVC} />
+        <Route path="/agencias-proximas" component={AgenciasProximas} />
         <Route path="/conta-bancaria" component={ContaBancaria} />
         <Route path="/comissoes" component={Comissoes} />
         <Route path="/beneficios" component={Beneficios} />

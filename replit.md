@@ -561,6 +561,13 @@ Changelog:
   * Updated completion phase to show 3-column grid with all test results
   * Enhanced final message to include product knowledge validation
   * Modified practical test flow to transition to products phase before completion
+- June 20, 2025. Created team-based agency selection system:
+  * Added /agencias-proximas page showing nearby CVC agencies with distance and ratings
+  * Implemented team structure display with roles, names, and commission estimates
+  * Integrated user as "Agente de Viagens (Home Office)" within existing teams
+  * Added agency performance metrics with sales goals and current progress
+  * Created interactive agency selection with team details and commission ranges
+  * Updated test completion flow to navigate to agency selection before banking setup
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
