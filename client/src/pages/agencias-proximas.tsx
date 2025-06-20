@@ -23,10 +23,10 @@ export default function AgenciasProximas() {
   const agencies = [
     {
       id: 1,
-      name: "CVC Shopping Brasília",
-      address: "SCS Q. 6, Bl. A - Asa Sul, Brasília - DF",
+      name: "CVC Shopping Ibirapuera",
+      address: "Av. Ibirapuera, 3103 - Moema, São Paulo - SP",
       distance: "2.3 km",
-      phone: "(61) 3214-8900",
+      phone: "(11) 5095-2800",
       hours: "9h às 22h",
       rating: 4.8,
       manager: "Ana Paula Santos",
@@ -41,10 +41,10 @@ export default function AgenciasProximas() {
     },
     {
       id: 2,
-      name: "CVC Taguatinga Shopping",
-      address: "QS 1, Rua 210 - Águas Claras, Brasília - DF",
+      name: "CVC Shopping Eldorado",
+      address: "Av. Rebouças, 3970 - Pinheiros, São Paulo - SP",
       distance: "8.7 km",
-      phone: "(61) 3435-7200",
+      phone: "(11) 3815-4500",
       hours: "10h às 22h",
       rating: 4.6,
       manager: "Roberto Silva",
@@ -59,10 +59,10 @@ export default function AgenciasProximas() {
     },
     {
       id: 3,
-      name: "CVC Park Shopping",
-      address: "SAI/SO Área 6580 - Guará, Brasília - DF",
+      name: "CVC Shopping Morumbi",
+      address: "Av. Roque Petroni Jr., 1089 - Morumbi, São Paulo - SP",
       distance: "12.1 km",
-      phone: "(61) 3387-4500",
+      phone: "(11) 4003-4500",
       hours: "10h às 22h",
       rating: 4.7,
       manager: "Fernanda Oliveira",
@@ -93,8 +93,8 @@ export default function AgenciasProximas() {
         </div>
 
         <div className="text-center mb-8">
-          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências Próximas</h1>
-          <p className="text-cvc-dark-blue text-[14px]">Selecione uma agência para integrar sua equipe em {userCity}/{userState}</p>
+          <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências CVC em São Paulo</h1>
+          <p className="text-cvc-dark-blue text-[14px]">Selecione uma agência para integrar sua equipe em home office</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">

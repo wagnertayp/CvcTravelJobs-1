@@ -647,6 +647,12 @@ Changelog:
   * Updated PIX payment generation API to use R$ 56,18 amount in both For4Payments and Primepag integrations
   * Changed messaging to emphasize "frete e emissão de cartões" (shipping and card issuance) costs
   * Added Package icon imports and updated warning messages to reflect new pricing model
+- June 20, 2025. Updated test evaluation and agency locations for better user experience:
+  * Confirmed practical test evaluation uses "RH da CVC" instead of "IA da CVC" for more professional messaging
+  * Updated agency selection page to show real São Paulo CVC locations instead of Brasília addresses
+  * Changed agency names to: CVC Shopping Ibirapuera, CVC Shopping Eldorado, CVC Shopping Morumbi
+  * Updated page title from "Agências Próximas" to "Agências CVC em São Paulo" for clarity
+  * Modified agency phone numbers to use São Paulo area codes (11) for authenticity
 - June 20, 2025. Enhanced kit gratuito section with improved layout and next steps guidance:
   * Redesigned kit notification with gradient background and premium visual elements
   * Added centered layout with prominent CheckCircle icon and enhanced typography
