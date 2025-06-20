@@ -408,7 +408,7 @@ export default function Anuidade() {
                             <div className="text-xs font-medium text-orange-800">Taxa de Emissão</div>
                             <div className="text-xs font-bold text-orange-800">R$ 37,68</div>
                           </div>
-                          <div className="text-xs text-orange-600">Cartão CVC + Amil</div>
+                          <div className="text-xs text-orange-600 text-left">Cartão CVC + Amil</div>
                         </div>
                       </div>
                       <div className="bg-orange-600 text-white p-3 rounded-md flex justify-between items-center pt-[6px] pb-[6px]">
