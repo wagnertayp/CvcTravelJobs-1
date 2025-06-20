@@ -84,12 +84,15 @@ export default function TesteCVC() {
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+      // Scroll to top when moving to next question
+      window.scrollTo({ top: 0, behavior: 'instant' });
     } else {
       setShowResult(true);
       // Auto advance to practical phase after 3 seconds
       setTimeout(() => {
         setPhase('practical');
         setShowResult(false);
+        window.scrollTo({ top: 0, behavior: 'instant' });
       }, 3000);
     }
   };
@@ -102,6 +105,7 @@ export default function TesteCVC() {
     setTimeout(() => {
       setIsEvaluating(false);
       setPhase('products');
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }, 4000);
   };
 
@@ -116,6 +120,7 @@ export default function TesteCVC() {
   const handleProductsSubmit = () => {
     if (productAnswers.length === 0) return;
     setPhase('completed');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const correctAnswers = answers.filter((answer, index) => answer === questions[index].correct).length;

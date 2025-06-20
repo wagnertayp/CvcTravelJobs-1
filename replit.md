@@ -589,6 +589,12 @@ Changelog:
   * Moved "Resultado Final" title inside the CVC blue highlight box
   * Changed title color to CVC yellow for better contrast against blue background
   * Enhanced mobile readability with responsive padding adjustments
+- June 20, 2025. Fixed scroll behavior during quiz navigation for better mobile experience:
+  * Added instant scroll to top when advancing to next question in first phase
+  * Implemented scroll reset when transitioning from quiz to practical phase
+  * Added scroll reset when moving from practical to products phase
+  * Ensured scroll reset when completing products phase to final results
+  * Fixed mobile user experience where pages were loading mid-screen instead of at top
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
