@@ -159,7 +159,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
               
               <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4 pl-[24px] pr-[24px]">
                 <h4 className="font-semibold text-cvc-blue mb-2 text-left">Próxima Fase: Conhecimentos de Produtos</h4>
-                <ul className="text-sm text-cvc-dark-blue space-y-1">
+                <ul className="text-sm text-cvc-dark-blue space-y-1 text-left">
                   <li>• Demonstre conhecimento sobre serviços da CVC</li>
                   <li>• Identifique produtos e soluções oferecidas</li>
                   <li>• Mostre familiaridade com o portfólio da empresa</li>
