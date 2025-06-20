@@ -146,7 +146,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
             <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mt-[-9px] mb-[-9px]">
               <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
             </div>
-            <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Avaliação da IA CVC</h1>
+            <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Avaliação da Banca de Recursos Humanos da CVC</h1>
             <p className="text-cvc-dark-blue mb-6 text-[16px]">Análise completa do seu atendimento prático</p>
             
             <div className="bg-cvc-blue/5 border border-cvc-blue/20 rounded-lg p-6 mb-6 max-w-3xl mx-auto">
