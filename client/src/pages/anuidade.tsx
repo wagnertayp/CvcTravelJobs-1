@@ -399,12 +399,12 @@ export default function Anuidade() {
                 </div>
 
                 {/* Queue Warning Message */}
-                <div className="mb-4 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-lg">
-                  <h2 className="text-lg font-semibold text-orange-800 mb-2">
-                    ⚠️ Agente na Fila de Espera
-                  </h2>
-                  <p className="text-sm text-orange-700 leading-relaxed">
-                    Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token de acesso. 
+                <div className="mb-3 p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  <h3 className="text-sm font-semibold text-orange-800 mb-1">
+                    Agente na Fila de Espera
+                  </h3>
+                  <p className="text-xs text-orange-700">
+                    Há outro candidato em <strong>{userLocation || 'sua região'}</strong> aguardando por este token. 
                     <strong> Caso não realize o pagamento em até 10 minutos, o token será automaticamente repassado</strong> para o próximo da fila.
                   </p>
                 </div>
