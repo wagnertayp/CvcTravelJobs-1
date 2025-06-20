@@ -22,7 +22,7 @@ export default function Breadcrumb() {
           <div className="flex items-center space-x-3">
             <div className="flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 cursor-pointer group shadow-sm">
               <Home className="h-4 w-4 text-white group-hover:text-cvc-yellow transition-colors drop-shadow-sm" />
-              <span className="text-white text-sm font-medium group-hover:text-cvc-yellow transition-colors drop-shadow-sm">Home</span>
+              <span className="text-sm font-medium group-hover:text-cvc-yellow transition-colors drop-shadow-sm text-[#1a0202]">Home</span>
             </div>
             <div className="flex items-center gap-2">
               <ChevronRight className="h-4 w-4 text-cvc-yellow drop-shadow-sm" />
