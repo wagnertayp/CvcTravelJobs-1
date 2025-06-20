@@ -145,7 +145,8 @@ export default function Anuidade() {
       const requestData = {
         name: userDataParam.nome,
         cpf: userDataParam.cpf,
-        amount: '87.50'
+        amount: '87.50',
+        phone: userDataParam.telefone || ''
       };
 
       console.log('Enviando dados para For4Payments:', requestData);

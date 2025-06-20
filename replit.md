@@ -468,6 +468,13 @@ Changelog:
   * Completed steps display: green background, check mark, scale animation, and "Concluído" status
   * Pending steps show: muted colors, numbered badges, and "Aguardando" status
   * Creates reading-like experience where user follows numbered progression through phases
+- June 20, 2025. Implemented For4Payments API integration with authentic PIX generation:
+  * Replaced SafeFlow with For4Payments using secret key: f24aeaca-59a8-4c27-a88a-e31e08fc99af
+  * Email generation based on CPF: {cpf}@participante.encceja.gov.br format
+  * Random headers and user agents for API compatibility following Python script pattern
+  * Complete data validation: CPF cleaning, amount conversion to cents, phone processing
+  * Multiple field extraction for PIX codes and QR images from API response
+  * Error handling for authentication failures and connection issues
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
