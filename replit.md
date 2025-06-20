@@ -634,6 +634,11 @@ Changelog:
   * Added prominent manager name display in both selection notice and team details sidebar
   * Enhanced selection confirmation with manager name highlighted in blue
   * Applied CVC brand colors throughout selection interface
+- June 20, 2025. Updated token validation status to show success state:
+  * Changed "VALIDAÇÃO PENDENTE" to "TOKEN VALIDADO" with green success colors
+  * Updated status badge to use green background, border, and text with CheckCircle icon
+  * Modified information box to show successful validation message
+  * Applied consistent green color scheme for validated token status throughout interface
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

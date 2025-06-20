@@ -552,9 +552,9 @@ export default function Beneficios() {
                     <div className="text-2xl font-mono font-bold text-blue-900 tracking-wider mb-2">
                       {`CVC${userData.nome.replace(/\s+/g, '').slice(0, 3).toUpperCase()}2025X7R`}
                     </div>
-                    <div className="inline-flex items-center px-3 py-1 rounded-full text-xs border border-cvc-blue bg-cvc-yellow text-[#0e00b4] font-semibold">
-                      <Clock className="h-3 w-3 mr-1" />
-                      VALIDAÇÃO PENDENTE
+                    <div className="inline-flex items-center px-3 py-1 rounded-full text-xs border border-green-500 bg-green-100 text-green-700 font-semibold">
+                      <CheckCircle className="h-3 w-3 mr-1" />
+                      TOKEN VALIDADO
                     </div>
                   </div>
                 </div>
@@ -562,12 +562,12 @@ export default function Beneficios() {
             </div>
             
             <div className="mt-5">
-              <div className="bg-cvc-yellow border border-cvc-blue rounded-lg p-3">
+              <div className="bg-green-100 border border-green-500 rounded-lg p-3">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-[#0e00b4]" />
-                  <span className="text-sm text-[#0e00b4] font-bold">Validação Pendente</span>
+                  <CheckCircle className="h-4 w-4 text-green-700" />
+                  <span className="text-sm text-green-700 font-bold">Token Validado</span>
                 </div>
-                <p className="text-xs text-[#0e00b4] mt-1">É necessário realizar o primeiro acesso ao sistema de vendas para validar seu token de agente CVC.</p>
+                <p className="text-xs text-green-700 mt-1">Seu token de agente CVC foi validado com sucesso. Sistema pronto para uso.</p>
               </div>
             </div>
           </div>
