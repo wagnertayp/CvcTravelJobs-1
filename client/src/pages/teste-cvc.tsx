@@ -242,7 +242,7 @@ export default function TesteCVC() {
               </div>
             </div>
 
-            <div className="bg-cvc-blue/5 p-6 rounded-lg mb-6">
+            <div className="bg-cvc-blue/5 p-6 rounded-lg mt-[12px] mb-[12px] pt-[0px] pb-[0px]">
               <div className="bg-cvc-blue border-l-4 border-cvc-yellow p-6 px-8 sm:px-12 rounded-lg pl-[32px] pr-[32px] ml-[-43px] mr-[-43px] mt-[24px] mb-[24px] pt-[17px] pb-[17px]">
                 <h3 className="font-semibold text-cvc-yellow mb-3">Resultado Final</h3>
                 <p className="text-white text-sm font-medium leading-relaxed">
