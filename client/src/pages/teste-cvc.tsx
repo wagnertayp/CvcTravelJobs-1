@@ -285,7 +285,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
             <p className="text-cvc-dark-blue text-[14px]">Você foi aprovado no teste de conhecimentos gerais e está apto para continuar.</p>
           </div>
 
-          <div className="bg-white border border-cvc-blue/20 rounded-lg p-8 text-center">
+          <div className="bg-white border border-cvc-blue/20 rounded-lg p-8 text-center pt-[19px] pb-[19px] mt-[37px] mb-[37px]">
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <div className="bg-cvc-yellow/10 p-6 rounded-lg">
                 <h3 className="font-bold text-cvc-blue mb-2">Fase 1 - Conhecimentos Gerais</h3>
