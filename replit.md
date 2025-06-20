@@ -461,15 +461,14 @@ Changelog:
   * Created professional layout with chevron icon glow effect and drop shadows
   * Enhanced typography with refined spacing and "CVC Agentes" branding
   * Balanced clean aesthetics with sophisticated design elements for premium feel
-- June 19, 2025. Implemented premium progressive checklist loading system:
-  * Replaced traditional loaders with sophisticated step-by-step visual checklist format
-  * Enhanced with premium animations: progress bars, glow effects, scaling, and bounce animations
-  * Extended timing to 8.5 seconds per step (6 additional seconds) for comfortable reading
-  * Added visual states: spinner for active steps, check marks for completed, scale transforms
-  * Implemented gradient progress bar showing real-time completion percentage
-  * Added status indicators with animated dots and descriptive text (Processando, Concluído, Aguardando)
-  * Applied CVC brand gradients and premium shadows throughout interface
-  * Enhanced user experience with estimated completion time and smooth transitions
+- June 19, 2025. Redesigned loader with breadcrumb-inspired minimalist approach:
+  * Simplified design using CVC blue background and glass-morphism effects
+  * Reduced timing to 2 seconds per step for faster, more functional experience
+  * Applied breadcrumb styling: chevron icon, clean typography, and CVC yellow accents
+  * Compact centered layout with simple progress cards and bouncing dot animations
+  * Clear visual states: yellow background for completed/active, check marks for completion
+  * Added simple progress bar and step counter (X de Y etapas) for clear feedback
+  * Maintained CVC brand identity while prioritizing speed and functionality over complex animations
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
