@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
-import { BookOpen, CheckCircle, XCircle, ChevronRight, Clock, User, Package } from "lucide-react";
+import { BookOpen, CheckCircle, CheckCircle2, XCircle, ChevronRight, Clock, User, Package } from "lucide-react";
 import Header from "@/components/header";
 import Breadcrumb from "@/components/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -351,7 +351,7 @@ export default function TesteCVC() {
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
-              <CheckCircle className="h-8 w-8 text-cvc-blue" />
+              <CheckCircle2 className="h-8 w-8 text-cvc-blue" />
             </div>
             <h1 className="text-3xl font-bold text-cvc-blue mb-3">Primeira Fase Concluída!</h1>
             <p className="text-cvc-dark-blue text-lg mb-6">Você acertou {correctAnswers} de {questions.length} questões ({score}%)</p>
