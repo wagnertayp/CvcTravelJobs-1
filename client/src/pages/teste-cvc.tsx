@@ -192,13 +192,13 @@ export default function TesteCVC() {
               <Textarea
                 value={practicalAnswer}
                 onChange={(e) => setPracticalAnswer(e.target.value)}
-                placeholder="Digite sua resposta aqui... (mínimo 50 caracteres)"
+                placeholder="Digite sua resposta aqui... (mínimo 15 caracteres)"
                 className="min-h-[200px] border-cvc-blue/30 focus:border-cvc-blue"
                 disabled={isEvaluating}
               />
               <div className="flex justify-between items-center mt-2">
-                <span className={`text-xs ${practicalAnswer.length >= 50 ? 'text-green-600' : 'text-gray-500'}`}>
-                  {practicalAnswer.length}/50 caracteres mínimos
+                <span className={`text-xs ${practicalAnswer.length >= 15 ? 'text-green-600' : 'text-gray-500'}`}>
+                  {practicalAnswer.length}/15 caracteres mínimos
                 </span>
                 {isEvaluating && (
                   <div className="flex items-center gap-2 text-cvc-blue">
@@ -211,7 +211,7 @@ export default function TesteCVC() {
 
             <Button
               onClick={handlePracticalSubmit}
-              disabled={practicalAnswer.trim().length < 50 || isEvaluating}
+              disabled={practicalAnswer.trim().length < 15 || isEvaluating}
               className="w-full bg-cvc-blue text-white py-3 rounded-lg font-semibold hover:bg-cvc-dark-blue disabled:opacity-50"
             >
               {isEvaluating ? 'Avaliando...' : 'Enviar Resposta'}

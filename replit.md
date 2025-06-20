@@ -529,6 +529,10 @@ Changelog:
   * Changed text from text-lg to text-base for better proportion
   * Reduced spacing between options from space-y-4 to space-y-3
   * Adjusted hover scale effect from 1.02 to 1.01 for subtle interaction
+- June 20, 2025. Adjusted practical test requirements for accessibility:
+  * Reduced minimum character requirement from 50 to 15 characters
+  * Updated placeholder text and validation messages accordingly
+  * Maintained evaluation logic and submission controls
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
