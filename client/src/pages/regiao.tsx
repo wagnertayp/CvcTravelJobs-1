@@ -175,7 +175,7 @@ export default function Regiao() {
               <h3 className="font-medium text-gray-900 mb-3">Estimativa de Ganhos</h3>
               <div className="bg-gray-50 rounded-lg p-4 text-left">
                 <div className="text-2xl font-bold text-cvc-blue mb-2">R$ 4.500 - R$ 7.200</div>
-                <div className="text-sm text-gray-600 mb-3">Estimativa mensal</div>
+                <div className="text-sm text-gray-600 mb-3">Estimativa mensal de agentes de viagem na sua região.</div>
                 <div className="space-y-1 text-xs text-gray-700">
                   <div>• Baseado em 15-25 vendas/mês</div>
                   <div>• Comissão média de 10%</div>
