@@ -639,6 +639,14 @@ Changelog:
   * Updated status badge to use green background, border, and text with CheckCircle icon
   * Modified information box to show successful validation message
   * Applied consistent green color scheme for validated token status throughout interface
+- June 20, 2025. Changed pricing model from annual fee to equipment shipping costs:
+  * Updated anuidade page to charge R$ 56,18 for equipment shipping and card issuance instead of R$ 87,50 annual fee
+  * Removed references to "anuidade" and "token access fees" throughout the payment system
+  * Updated page title from "Sistema de Vendas CVC" to "Kit Profissional CVC" 
+  * Modified benefits section to focus on physical kit items: notebook, headset, CVC card, Amil health card
+  * Updated PIX payment generation API to use R$ 56,18 amount in both For4Payments and Primepag integrations
+  * Changed messaging to emphasize "frete e emissão de cartões" (shipping and card issuance) costs
+  * Added Package icon imports and updated warning messages to reflect new pricing model
 - June 20, 2025. Enhanced kit gratuito section with improved layout and next steps guidance:
   * Redesigned kit notification with gradient background and premium visual elements
   * Added centered layout with prominent CheckCircle icon and enhanced typography

