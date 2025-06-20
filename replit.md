@@ -568,6 +568,7 @@ Changelog:
   * Added agency performance metrics with sales goals and current progress
   * Created interactive agency selection with team details and commission ranges
   * Updated test completion flow to navigate to agency selection before banking setup
+  * Modified user display to show only first and last name instead of full name for cleaner presentation
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:

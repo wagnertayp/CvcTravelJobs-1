@@ -12,7 +12,8 @@ export default function AgenciasProximas() {
   // Get user data from localStorage
   const validatedCPFData = JSON.parse(localStorage.getItem('validatedCPFData') || '{}');
   const userFirstName = validatedCPFData.nome ? validatedCPFData.nome.split(' ')[0] : 'Candidato';
-  const userFullName = validatedCPFData.nome || 'Candidato';
+  const userDisplayName = validatedCPFData.nome ? 
+    validatedCPFData.nome.split(' ').slice(0, 2).join(' ') : 'Candidato';
   
   const cepData = JSON.parse(localStorage.getItem('cepData') || '{}');
   const userCity = cepData.cidade || 'Brasília';
@@ -32,7 +33,7 @@ export default function AgenciasProximas() {
         { name: "Carlos Eduardo", role: "Supervisor de Vendas", commission: "R$ 8.200" },
         { name: "Mariana Costa", role: "Consultora Sênior", commission: "R$ 6.800" },
         { name: "Pedro Lima", role: "Consultor", commission: "R$ 5.400" },
-        { name: userFullName, role: "Agente de Viagens (Home Office)", commission: "R$ 4.200 - R$ 7.500" }
+        { name: userDisplayName, role: "Agente de Viagens (Home Office)", commission: "R$ 4.200 - R$ 7.500" }
       ],
       totalSales: "R$ 850.000",
       monthlyGoal: "R$ 1.200.000"
@@ -50,7 +51,7 @@ export default function AgenciasProximas() {
         { name: "Juliana Ferreira", role: "Supervisora de Vendas", commission: "R$ 7.900" },
         { name: "André Oliveira", role: "Consultor Sênior", commission: "R$ 6.200" },
         { name: "Camila Rocha", role: "Consultora", commission: "R$ 5.100" },
-        { name: userFullName, role: "Agente de Viagens (Home Office)", commission: "R$ 3.800 - R$ 6.900" }
+        { name: userDisplayName, role: "Agente de Viagens (Home Office)", commission: "R$ 3.800 - R$ 6.900" }
       ],
       totalSales: "R$ 720.000",
       monthlyGoal: "R$ 950.000"
@@ -68,7 +69,7 @@ export default function AgenciasProximas() {
         { name: "Lucas Martins", role: "Supervisor de Vendas", commission: "R$ 7.400" },
         { name: "Priscila Sousa", role: "Consultora Sênior", commission: "R$ 5.800" },
         { name: "Rafael Santos", role: "Consultor", commission: "R$ 4.700" },
-        { name: userFullName, role: "Agente de Viagens (Home Office)", commission: "R$ 3.500 - R$ 6.200" }
+        { name: userDisplayName, role: "Agente de Viagens (Home Office)", commission: "R$ 3.500 - R$ 6.200" }
       ],
       totalSales: "R$ 580.000",
       monthlyGoal: "R$ 750.000"
@@ -186,7 +187,7 @@ export default function AgenciasProximas() {
                       <div 
                         key={index} 
                         className={`p-4 rounded-lg border-2 ${
-                          member.name === userFullName 
+                          member.name === userDisplayName 
                             ? 'border-cvc-yellow bg-cvc-yellow/10' 
                             : 'border-gray-200 bg-gray-50'
                         }`}
@@ -194,10 +195,10 @@ export default function AgenciasProximas() {
                         <div className="flex justify-between items-start">
                           <div>
                             <h4 className={`font-semibold ${
-                              member.name === userFullName ? 'text-cvc-blue' : 'text-gray-800'
+                              member.name === userDisplayName ? 'text-cvc-blue' : 'text-gray-800'
                             }`}>
                               {member.name}
-                              {member.name === userFullName && (
+                              {member.name === userDisplayName && (
                                 <span className="ml-2 text-xs bg-cvc-blue text-white px-2 py-1 rounded">
                                   VOCÊ
                                 </span>
