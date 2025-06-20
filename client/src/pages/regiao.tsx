@@ -190,7 +190,7 @@ export default function Regiao() {
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           <div className="mb-4">
             <h2 className="text-lg font-semibold text-gray-900">Cadastre sua Documentação</h2>
-            <p className="text-sm text-gray-600">Informe seu CPF para se tornar um Agente de Viagens CVC</p>
+            <p className="text-sm text-gray-600">Informe seu CPF para iniciar o processo de seleção para Agente de Viagens CVC</p>
           </div>
 
           <form onSubmit={handleSubmit} className="max-w-md">
