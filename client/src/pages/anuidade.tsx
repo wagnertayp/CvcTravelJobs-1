@@ -390,55 +390,18 @@ export default function Anuidade() {
                   </div>
                 </div>
 
-                {/* Payment Method Selection Title */}
-                <div className="mb-4">
-                  <h2 className="text-xl font-semibold text-cvc-blue text-center">
-                    Escolha seu Método de Pagamento
+                {/* Queue Warning Message */}
+                <div className="mb-4 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-lg">
+                  <h2 className="text-lg font-semibold text-orange-800 mb-2">
+                    ⚠️ Agente na Fila de Espera
                   </h2>
+                  <p className="text-sm text-orange-700 leading-relaxed">
+                    Há outro candidato aguardando por este token de acesso. 
+                    <strong> Caso não realize o pagamento nos próximos minutos, o token será automaticamente repassado</strong> para o próximo da fila.
+                  </p>
                 </div>
 
-                {/* Credit Card Payment Option */}
-                <div className="bg-white border-2 border-gray-200 rounded-lg p-4 mb-4">
-                  <div 
-                    className="flex items-center justify-between cursor-pointer hover:bg-gray-50 rounded transition-colors"
-                    onClick={() => setShowCreditCardForm(!showCreditCardForm)}
-                  >
-                    <h3 className="text-lg font-semibold text-cvc-blue flex items-center gap-2">
-                      <CreditCard className="h-5 w-5" />
-                      Cartão de Crédito
-                    </h3>
-                    <div className="text-cvc-blue hover:text-cvc-dark-blue transition-colors">
-                      {showCreditCardForm ? (
-                        <ChevronUp className="h-5 w-5" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5" />
-                      )}
-                    </div>
-                  </div>
-
-                  {showCreditCardForm && (
-                    <>
-                      {/* System Unavailable Warning */}
-                      <div className="mt-4 mb-4 p-3 bg-red-100 border-l-4 border-red-500 rounded">
-                        
-                        <p className="text-xs text-red-600 leading-relaxed mb-2">
-                          O processamento de cartões está temporariamente fora do ar.
-                        </p>
-                        <p className="text-xs text-red-700 font-medium">
-                          Por favor, utilize outro meio de pagamento para garantir sua vaga.
-                        </p>
-                      </div>
-
-                      {/* Recommendation */}
-                      <div className="p-3 bg-cvc-yellow/20 border border-cvc-yellow rounded-lg">
-                        <div className="text-center">
-                          <p className="text-sm font-medium text-cvc-blue mb-2">Recomendação: Use PIX para ativação imediata</p>
-                          <p className="text-sm text-cvc-dark-blue">PIX é processado instantaneamente e libera seu acesso ao sistema em poucos minutos.</p>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
+                
 
                 {/* PIX Payment Display */}
                 <div className="bg-white border-2 border-cvc-blue/20 rounded-lg p-4 mb-4">

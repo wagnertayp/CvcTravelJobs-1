@@ -475,6 +475,12 @@ Changelog:
   * Complete data validation: CPF cleaning, amount conversion to cents, phone processing
   * Multiple field extraction for PIX codes and QR images from API response
   * Error handling for authentication failures and connection issues
+  * Successful test: Generated authentic PIX for WAGNER LUIS RAMOS SILVA (CPF: 05289460217)
+- June 20, 2025. Enhanced payment page with queue pressure messaging:
+  * Removed credit card payment option for simplified user flow
+  * Added orange warning message about agent in waiting queue
+  * Emphasized urgency: token will be transferred if payment not completed
+  * Streamlined interface to focus on PIX payment exclusively
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
