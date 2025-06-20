@@ -405,7 +405,7 @@ export default function Anuidade() {
                           <div className="text-xs text-orange-600">CVC personalizado + Amil</div>
                         </div>
                       </div>
-                      <div className="bg-orange-600 text-white p-3 rounded-md flex justify-between items-center">
+                      <div className="bg-orange-600 text-white p-3 rounded-md flex justify-between items-center pt-[6px] pb-[6px]">
                         <span className="text-sm font-medium">Total a Pagar:</span>
                         <span className="text-xl font-bold">R$ 56,18</span>
                       </div>
