@@ -402,7 +402,7 @@ export default function Anuidade() {
                         </div>
                         <div className="bg-white/80 backdrop-blur-sm p-3 rounded-md border border-orange-200">
                           <div className="text-xs font-medium text-orange-800 mb-1">Taxa de Emissão dos Cartões</div>
-                          <div className="text-xs text-orange-600">CVC personalizado + Amil</div>
+                          <div className="text-xs text-orange-600">Cartão CVC + Amil</div>
                         </div>
                       </div>
                       <div className="bg-orange-600 text-white p-3 rounded-md flex justify-between items-center pt-[6px] pb-[6px]">
