@@ -383,7 +383,7 @@ export default function Anuidade() {
                       <div className="text-xs text-gray-600">CVC + Amil Health</div>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600 mt-3 text-center">Envio gratuito via SEDEX após pagamento dos custos</div>
+                  <div className="text-sm text-gray-600 mt-3 text-center">Envio realizado via SEDEX após pagamento dos custos</div>
                 </div>
 
                 {/* Payment Requirement */}
