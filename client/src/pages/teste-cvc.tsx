@@ -280,26 +280,26 @@ export default function TesteCVC() {
             Selecione uma alternativa para continuar
           </p>
 
-          <div className="space-y-4 mb-10">
+          <div className="space-y-3 mb-8">
             {question.options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
-                className={`w-full text-left p-6 rounded-xl border-2 transition-all duration-300 transform hover:scale-[1.02] ${
+                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-300 transform hover:scale-[1.01] ${
                   selectedAnswer === index
                     ? 'border-cvc-blue bg-cvc-yellow/10 shadow-md'
                     : 'border-gray-200 hover:border-cvc-blue/50 hover:bg-gray-50 hover:shadow-sm'
                 }`}
               >
-                <div className="flex items-start gap-4">
-                  <div className={`min-w-[40px] h-10 rounded-lg flex items-center justify-center text-white font-bold text-lg ${
+                <div className="flex items-center gap-3">
+                  <div className={`min-w-[32px] h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm ${
                     selectedAnswer === index
                       ? 'bg-cvc-blue shadow-md'
                       : 'bg-gray-400'
                   }`}>
                     {String.fromCharCode(65 + index)}
                   </div>
-                  <span className={`font-medium text-lg leading-relaxed ${
+                  <span className={`font-medium text-base leading-normal ${
                     selectedAnswer === index ? 'text-cvc-blue' : 'text-gray-700'
                   }`}>
                     {option}

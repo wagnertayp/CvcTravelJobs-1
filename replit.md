@@ -523,6 +523,12 @@ Changelog:
   * Moved instruction text to highlighted box below question title
   * Centered submit button at bottom with improved styling
   * Enhanced visual hierarchy with better spacing and organization
+- June 20, 2025. Optimized quiz options for compact design:
+  * Reduced padding from p-6 to p-4 for more compact option buttons
+  * Decreased letter badge size from 40px to 32px width and height
+  * Changed text from text-lg to text-base for better proportion
+  * Reduced spacing between options from space-y-4 to space-y-3
+  * Adjusted hover scale effect from 1.02 to 1.01 for subtle interaction
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
