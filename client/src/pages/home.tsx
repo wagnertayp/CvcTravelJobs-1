@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/header";
-import OfficialWarning from "@/components/official-warning";
 import Breadcrumb from "@/components/breadcrumb";
 import HeroSection from "@/components/hero-section";
 import IncomeHighlight from "@/components/income-highlight";
@@ -26,7 +25,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <OfficialWarning />
       <Header />
       <Breadcrumb />
       <HeroSection />

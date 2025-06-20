@@ -48,6 +48,9 @@ export default function Breadcrumb() {
           </div>
         </nav>
       </div>
+      
+      {/* Yellow divider line */}
+      <div className="w-full h-1 bg-cvc-yellow"></div>
     </section>
   );
 }

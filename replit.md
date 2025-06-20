@@ -595,6 +595,10 @@ Changelog:
   * Added scroll reset when moving from practical to products phase
   * Ensured scroll reset when completing products phase to final results
   * Fixed mobile user experience where pages were loading mid-screen instead of at top
+- June 20, 2025. Removed official warning banner and enhanced breadcrumb visual separation:
+  * Completely removed red warning banner from official-warning component
+  * Added CVC yellow divider line at bottom of breadcrumb for better visual separation
+  * Enhanced page layout with cleaner navigation hierarchy
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
