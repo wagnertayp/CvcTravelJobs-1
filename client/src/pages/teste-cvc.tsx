@@ -166,7 +166,7 @@ export default function TesteCVC() {
         <Header />
         <Breadcrumb />
         <div className="max-w-4xl mx-auto px-4 py-12">
-          <div className="text-center mt-[-21px] mb-[-21px]">
+          <div className="text-center pt-[0px] pb-[0px] mt-[10px] mb-[10px]">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-yellow/20 rounded-full mb-4">
               <User className="h-8 w-8 text-cvc-blue" />
             </div>
