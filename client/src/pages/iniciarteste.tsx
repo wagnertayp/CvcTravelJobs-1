@@ -110,7 +110,7 @@ export default function IniciarTeste() {
           </div>
 
           <div className="text-center text-sm text-gray-600">
-            <p>Após completar o teste, você prosseguirá para a seleção de agência e configuração bancária</p>
+            <p>Após completar o teste, você prosseguirá para acesso aos benefícios e Sistema de Vendas</p>
           </div>
         </div>
 
