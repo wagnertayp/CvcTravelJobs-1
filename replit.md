@@ -570,6 +570,10 @@ Changelog:
   * Updated test completion flow to navigate to agency selection before banking setup
   * Modified user display to show only first and last name instead of full name for cleaner presentation
   * Optimized agency card layout by removing manager and monthly sales information for more compact display
+- June 20, 2025. Enhanced scroll-to-top functionality for better user experience:
+  * Improved ScrollToTop component with instant scroll behavior and multiple fallback methods
+  * Added document element scroll reset and delayed timeout for content loading scenarios
+  * Fixed issue where pages were opening in the middle of the screen instead of at the top
 - June 17, 2025. Updated comissoes page button text:
   * Changed "Ver Benefícios" to "Prosseguir" for more generic navigation labeling
 - June 17, 2025. Updated token validation status in beneficios page:
