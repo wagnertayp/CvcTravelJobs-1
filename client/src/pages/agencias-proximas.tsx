@@ -198,6 +198,7 @@ export default function AgenciasProximas() {
                         </div>
                         <div className="text-right">
                           <p className="text-sm font-medium text-cvc-blue">{member.commission}</p>
+                          <p className="text-xs text-gray-500">comissão</p>
                         </div>
                       </div>
                     ))}
