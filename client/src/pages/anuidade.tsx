@@ -387,27 +387,40 @@ export default function Anuidade() {
                 </div>
 
                 {/* Pending Payment Warning */}
-                <div className="p-5 bg-orange-50 border-2 border-orange-200 rounded-lg mb-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <h4 className="font-bold text-orange-800 text-base mb-3">Pendência Encontrada</h4>
-                      <div className="space-y-3 text-sm text-orange-700 mb-4">
-                        <div className="bg-white p-3 rounded border border-orange-200">
-                          <div className="font-medium text-orange-800">Pagamento do frete do kit profissional</div>
-                          <div className="text-xs text-orange-600 mt-1">Envio via SEDEX para todo Brasil</div>
-                        </div>
-                        <div className="bg-white p-3 rounded border border-orange-200">
-                          <div className="font-medium text-orange-800">Taxa de emissão dos cartões benefício</div>
-                          <div className="text-xs text-orange-600 mt-1">Cartão CVC personalizado + Cartão Amil</div>
-                        </div>
-                      </div>
-                      <div className="p-3 bg-orange-100 rounded-lg border border-orange-300">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-orange-700 font-semibold">Total a pagar:</span>
-                          <span className="text-lg font-bold text-orange-800">R$ 56,18</span>
-                        </div>
-                      </div>
-                    </div>
+                <div className="p-4 bg-orange-50 border border-orange-200 rounded-lg mb-4">
+                  <h4 className="font-semibold text-orange-800 text-sm mb-2">Pendências para Finalização</h4>
+                  <div className="text-sm text-orange-700 mb-3">
+                    <span className="block">• Frete do kit profissional (SEDEX)</span>
+                    <span className="block">• Emissão cartões CVC + Amil</span>
+                  </div>
+                  <div className="bg-orange-100 p-2 rounded flex justify-between items-center">
+                    <span className="text-sm font-medium text-orange-700">Total:</span>
+                    <span className="text-lg font-bold text-orange-800">R$ 56,18</span>
+                  </div>
+                </div>
+
+                {/* Shipping Address */}
+                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg mb-4">
+                  <h5 className="font-medium text-gray-800 text-sm mb-2">Endereço de Entrega</h5>
+                  <div className="text-sm text-gray-600">
+                    {(() => {
+                      const shippingData = localStorage.getItem('shippingAddress');
+                      if (shippingData) {
+                        try {
+                          const address = JSON.parse(shippingData);
+                          return (
+                            <div className="space-y-1">
+                              <div>{address.rua}, {address.numero}</div>
+                              <div>{address.bairro} - {address.cidade}/{address.estado}</div>
+                              <div>CEP: {address.cep}</div>
+                            </div>
+                          );
+                        } catch (e) {
+                          return <span className="text-gray-400">Endereço não informado</span>;
+                        }
+                      }
+                      return <span className="text-gray-400">Endereço não informado</span>;
+                    })()}
                   </div>
                 </div>
 
@@ -539,17 +552,7 @@ export default function Anuidade() {
                     </div>
                   </div>
 
-                  {/* Critical Warning */}
-                  <div className="mt-3 p-4 bg-red-600 border border-red-700 rounded-lg shadow-lg">
-                    <div className="text-center">
-                      <div className="font-bold text-white text-sm mb-2 uppercase tracking-wide">ATENÇÃO </div>
-                      <div className="text-white text-sm leading-relaxed">
-                        Você tem apenas <strong className="text-cvc-yellow">10 minutos</strong> para concluir o pagamento dos custos de envio. 
-                        <br />
-                        <strong>Não haverá segunda chance de aprovação</strong> - a vaga será imediatamente preenchida por outro participante.
-                      </div>
-                    </div>
-                  </div>
+                  
 
                   {/* Error Display */}
                   {pixError && (
