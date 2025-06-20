@@ -94,7 +94,7 @@ export default function AgenciasProximas() {
 
         <div className="text-center mb-8">
           <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Agências Próximas</h1>
-          <p className="text-cvc-dark-blue">Selecione uma agência para integrar sua equipe em {userCity}/{userState}</p>
+          <p className="text-cvc-dark-blue text-[14px]">Selecione uma agência para integrar sua equipe em {userCity}/{userState}</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
