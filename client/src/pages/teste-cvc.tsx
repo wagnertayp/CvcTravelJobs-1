@@ -145,7 +145,7 @@ export default function TesteCVC() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mb-4">
               <Package className="h-8 w-8 text-cvc-blue" />
             </div>
-            <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Fase 3 - Conhecimentos de Produtos CVC</h1>
+            <h1 className="font-bold text-cvc-blue mb-2 text-[24px]">Conhecimentos de Produtos CVC</h1>
             <p className="text-cvc-dark-blue text-[14px]">Demonstre seus conhecimentos sobre os serviços da CVC</p>
           </div>
 
