@@ -205,7 +205,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
         <Breadcrumb />
         <div className="max-w-4xl mx-auto px-4 py-12 pt-[0px] pb-[0px]">
           <div className="text-center pt-[0px] pb-[0px] mt-[10px] mb-[10px]">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mt-[-2px] mb-[-2px]">
               <Package className="h-8 w-8 text-cvc-blue" />
             </div>
             <h1 className="font-bold text-cvc-blue text-[24px] mt-[-2px] mb-[-2px] pl-[0px] pr-[0px] pt-[0px] pb-[0px]">Conhecimentos de Produtos CVC</h1>
