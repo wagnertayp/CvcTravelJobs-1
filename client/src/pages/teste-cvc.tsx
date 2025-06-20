@@ -157,7 +157,7 @@ Resultado: APROVADO - Suas habilidades de atendimento atendem aos padrões da CV
                 </div>
               </div>
               
-              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4">
+              <div className="bg-cvc-yellow/10 border border-cvc-blue/20 rounded-lg p-4 mb-4 pl-[24px] pr-[24px]">
                 <h4 className="font-semibold text-cvc-blue mb-2">Próxima Fase: Conhecimentos de Produtos CVC</h4>
                 <ul className="text-sm text-cvc-dark-blue space-y-1">
                   <li>• Demonstre conhecimento sobre serviços da CVC</li>
