@@ -84,7 +84,7 @@ export default function AgenciasProximas() {
       <Breadcrumb />
       <div className="max-w-7xl mx-auto px-6 py-16 pt-[13px] pb-[13px]">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-cvc-blue/10 rounded-full mt-[-7px] mb-[-7px]">
             <MapPin className="h-8 w-8 text-cvc-blue" />
           </div>
           <h1 className="font-bold text-cvc-blue mb-3 text-[24px]">Agências CVC Próximas</h1>
